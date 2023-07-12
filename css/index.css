@@ -1,8 +1,0 @@
-.ttt {
-    width: 500px;
-    height: 300px;
-    background-image: linear-gradient(45deg, red, blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
