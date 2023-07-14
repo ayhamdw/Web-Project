@@ -3,8 +3,8 @@ body{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 300;
 	line-height: 1.7;
-	color:white;
-	background-color:#2b2e38;
+	color:#000000;
+	background-color:white;
 }
 a:hover {
 	text-decoration: none;
@@ -49,7 +49,7 @@ display: none;
   padding: 0;
   margin: 10px auto;
   cursor: pointer;
-  background-color:white;
+  background-color:#000000;
 }
 .checkbox:checked + label:before,
 .checkbox:not(:checked) + label:before{
@@ -58,8 +58,8 @@ display: none;
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  color: #5c85d6;
-  background-color: #020305;
+  color:white;
+  background-color: rgb(204, 0, 0);;
   font-family: 'unicons';
   content: '\eb4f';
   z-index: 20;
@@ -94,7 +94,7 @@ display: none;
 .card-front, .card-back {
   width: 100%;
   height: 100%;
-  background-color:#5c85d6;
+  background-color :rgb(204, 0, 0);;
   background-image: url('/img/pattern_japanese-pattern-2_1_2_0-0_0_1__ffffff00_000000.png');
   position: absolute;
   border-radius: 6px;
@@ -176,6 +176,6 @@ display: none;
 }
 .btn:hover{  
   background-color: #000000;
-  color: #5c85d6;
+  color: rgb(204, 0, 0);;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
