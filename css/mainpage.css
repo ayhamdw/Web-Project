@@ -144,5 +144,88 @@ ul {
     font-size: 20px;
 }
 
-
 /* End Section Setting */
+
+/*Start Benefits Setting */
+.benefits {
+    position: relative;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    width: fit-content;
+    padding: 10px 15px;
+}
+
+.benefits::before, .benefits::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: rgb(204, 0, 0);
+    position: absolute;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.benefits:hover {
+    transition-delay: 0.5s;
+    transition-duration: 0.3s;
+    color: white;
+    border-color: transparent;
+
+}
+
+.benefits::before {
+    left: -30%;
+}
+
+.benefits::after {
+    right: -30%;
+}
+
+.benefits:hover::before {
+    z-index: -1;
+    animation: BenefitsAnimationLeft 0.5s linear forwards;
+}
+
+.benefits:hover::after {
+    z-index: -1;
+    animation: BenefitsAnimationRight 0.5s linear forwards;
+}
+
+@keyframes BenefitsAnimationLeft {
+    50% {
+        left: 0;
+        height: 12px;
+        width: 12px;
+    }
+
+    100% {
+        left: 0;
+        border-radius: 0;
+        height: 100%;
+        width: 50%;
+
+    }
+}
+
+@keyframes BenefitsAnimationRight {
+    50% {
+        right: 0;
+        height: 12px;
+        width: 12px;
+    }
+
+    100% {
+        right: 0;
+        border-radius: 0;
+        height: 100%;
+        width: 50%;
+
+    }
+}
+
+/*End Benefits Setting */
