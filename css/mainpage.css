@@ -228,4 +228,83 @@ ul {
     }
 }
 
-/*End Benefits Setting */
+@keyframes ArrowAnimation {
+    100% {
+        transform: translateX(-40%);
+    }
+}
+
+/*End Benefits Settings */
+
+/*Start Articles Settings*/
+
+.BenefitsArticles {}
+
+.BenefitsArticles .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.BenefitsArticles .container .box {
+    box-shadow: 0 2px 15px rgb(0 0 0 /13%);
+    background-color: white;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.BenefitsArticles .container .box:hover {
+    transform: translateY(-5%);
+    box-shadow: 0 2px 15px rgb(0 0 0 /20%);
+}
+
+.BenefitsArticles .container img {
+    width: 100%;
+}
+
+.BenefitsArticles .container .box .content {
+    padding: 20px;
+}
+
+.BenefitsArticles .container .box .content h3 {
+    margin: 0;
+}
+
+.BenefitsArticles .container .box .content p {
+    margin: 10px 0 0;
+    line-height: 1.5;
+    color: #777;
+}
+
+.BenefitsArticles .container .box .link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #E6E6E7;
+    padding: 20px;
+}
+
+.BenefitsArticles .container .box .link a, i {
+    text-decoration: none;
+    color: rgb(25, 201, 255);
+    font-weight: bold;
+}
+
+.BenefitsArticles .container .box:hover .link i {
+    animation: ArrowAnimation 0.5s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*End Articles Settings*/
