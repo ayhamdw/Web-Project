@@ -204,6 +204,7 @@ header ul li a:hover
     background: #1e539e;
     clip-path: circle(600px at left 800px);
 }
+
 p{
     font-size: large;
     font-weight: 800;
@@ -215,6 +216,7 @@ p{
 .benefits
 {
     font-weight: 900;
+
     margin-right: 40px;
 }
 
