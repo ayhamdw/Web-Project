@@ -328,12 +328,10 @@ body {
 }
 /* head proprity*/
 
-.review_head{
+.review_head {
 
-margin-top: 60px;
-margin-bottom: 50px;
-margin-right: 650px;
-
+    text-align: center;
+    margin-block: 50px;
 
 }
 
@@ -457,6 +455,8 @@ margin-right: 650px;
     transform: scale(1.15);
     transform-origin: top;
   }
+
+  
 
   /*  end section 3 review */
         
