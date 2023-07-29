@@ -1,0 +1,524 @@
+/* general*/
+* { 
+    margin : 0;
+    padding: 0;
+    box-sizing : border-box;
+    font-familly : "Poppins", sans-serif;
+  }
+
+.navbar-brand{
+    color: rgb(25, 201, 255);
+}
+.btn{
+    color: rgb(25, 201, 255);
+    margin-right: 20px;
+}
+.navbar-icon_profile{
+    margin-left: 20px;
+    color: rgb(25, 201, 255);
+    font-size: 25px;
+    
+}
+.navbar-icon_notifiction i{
+   margin-left: 4px;
+   
+    color: rgb(25, 201, 255);
+    font-size: 17px;
+}
+.navbar-icon_notifiction .badge{
+    color: #cc0000;
+    font-size: 17px;
+ 
+}
+
+/*  Information card */
+.container-fluid{
+   
+  margin-top: 10px;
+
+}
+
+.padding {
+    margin-top: 25px;
+    padding: 3rem !important;
+   margin-left: 300px;
+}
+
+.user-card-full {
+    overflow: hidden;
+    
+    
+}
+
+.card_inf {
+    width: 500px;
+    
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+    box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+    border: none;
+    margin-bottom: 30px;
+    
+   
+}
+
+.m-r-0 {
+    margin-right: 0px;
+    
+    
+}
+
+.m-l-0 {
+    margin-left: 0px;
+    
+}
+
+.user-card-full .user-profile {
+    border-radius: 5px 0 0 5px;
+}
+
+.bg-c-lite-green {
+        background: -webkit-gradient(linear, left top, right top, from(#cc0000), to(#cc0000));
+    background: linear-gradient(to right, #cc0000,#cc0000);
+}
+
+.user-profile {
+    padding: 20px 0;
+}
+
+.card-block {
+    padding: 1.25rem;
+  
+
+}
+
+.m-b-25 {
+    margin-bottom: 25px;
+    
+}
+
+.img-radius {
+    border-radius: 5px;
+}
+
+
+ 
+h6 {
+    font-size: 14px;
+}
+
+.card_inf .card-block p {
+    line-height: 25px;
+    
+   
+}
+
+@media only screen and (min-width: 1400px){
+p {
+    font-size: 14px;
+}
+
+}
+
+.card-block {
+    padding: 1.25rem;
+    
+    
+    
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important;
+}
+
+.card_inf .card-block p {
+    line-height: 25px;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.text-muted {
+    color: #919aa3 !important;
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.f-w-600 {
+    font-weight: 600;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.m-t-40 {
+    margin-top: 20px;
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.m-t-40 {
+    margin-top: 20px;
+}
+
+.user-card-full .social-link li {
+    display: inline-block;
+}
+
+.user-card-full .social-link li a {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  
+}
+
+.container_sec1 {
+    position : relative;
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    flex-warp : warp;
+   
+    padding : 30px;  
+  }
+
+/* blood transfusion procedures */
+
+  
+  
+
+  
+  .container_card .card {
+   
+    position: relative;
+    max-width : 300px;
+    height : 215px;  
+    background-color : #fff;
+    margin : 30px 10px;
+    padding : 20px 15px;
+    
+    display : flex;
+    flex-direction : column;
+    box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+    transition : 0.3s ease-in-out;
+    border-radius : 15px;
+  }
+  .container_card .card:hover {
+    height : 320px;    
+  }
+  
+  
+  .container_card .card .image {
+    position : relative;
+    width : 260px;
+    height : 260px;
+    
+    top : -40%;
+    left: 8px;
+    right: 3px;
+    box-shadow : 0 5px 20px rgba(0,0,0,0.2);
+    z-index : 1;
+  }
+  
+  .container_card .card .image img {
+    max-width : 100%;
+    border-radius : 15px;
+  }
+  
+  .container_card .card .content {
+    position : relative;
+    top : -140px;
+    padding : 10px 15px;
+    color : #111;
+    text-align : center;
+    
+    visibility : hidden;
+    opacity : 0;
+    transition : 0.3s ease-in-out;
+      
+  }
+  
+  .container_card .card:hover .content {
+     margin-top : 15px;
+     visibility : visible;
+     opacity : 1;
+     transition-delay: 0.2s;
+    
+  }
+
+  /* Compatible Blood Type Donors */
+
+  
+  .table_section
+  {
+    
+    background-color: #eee;
+    margin-bottom: 70px;
+  }
+  .table_section h2
+  {
+   text-align: center;
+    margin-bottom: 15px;
+  }
+
+
+  .table_section .table_blood
+{
+    margin-right: 450px;
+    overflow-x: auto;
+}
+
+
+.table_section table
+{
+    min-width: 50px;
+    text-align: center;
+}
+.table_section  thead td
+{
+    background-color: #6edff6;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    font-weight: bold;
+}
+.table_section  table td
+{
+    padding: 10px;
+    min-width: 150px;
+    border-spacing: 0;
+
+}
+
+
+.table_section  tbody  .elm1
+{
+    background-color: #79dfc1;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    transition: 0.3s;
+}
+.table_section  tbody  .elm2
+{
+    
+    background-color:#ea868f;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    transition: 0.3s;
+}
+
+.table_section  tbody  .elm3
+{
+    
+    background-color:#b6bdca;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    transition: 0.3s;
+}
+
+.table_section  tbody  .elm4
+{
+    
+    background-color:#ffe69c;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    transition: 0.3s;
+}
+.table_section  tbody  .elm5
+{
+    
+    background-color:#feb272;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    transition: 0.3s;
+}
+.table_section  tbody  .elm6
+{
+    
+    background-color:#c29ffa;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    transition: 0.3s;
+}
+.table_section  tbody  .elm7
+{
+    
+    background-color:#e685b5;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    transition: 0.3s;
+}
+.table_section  tbody  .elm8
+{
+    
+    background-color:#6ea8fe;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    transition: 0.3s;
+}
+
+
+/* registry Transfer */
+
+  
+.registry_section
+{
+    
+  background-color: #eee;
+  margin-bottom: 70px;
+}
+.registry_section h2
+{
+ text-align: center;
+  margin-bottom: 15px;
+}
+
+
+.registry_section .registry_Transfer_table
+{
+    margin-bottom: 30px;
+  margin-right: 300px;
+  overflow-x: auto;
+}
+
+
+.registry_section table
+{
+  min-width: 50px;
+  text-align: center;
+}
+.registry_section  thead td
+{
+  background-color: #ffffff;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  font-weight: bold;
+}
+.registry_section  table td
+{
+   
+  padding: 10px;
+  min-width: 250px;
+  border-spacing: 0;
+
+}
+
+
+.registry_section  tbody  .elm1
+{
+  background-color:  #ffb3b3;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+.registry_section  tbody  .elm2
+{
+  
+  background-color:#ffffff;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+
+.registry_section  tbody  .elm3
+{
+  
+  background-color: #ffb3b3;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+
+.registry_section  tbody  .elm4
+{
+  
+  background-color:#ffffff;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+.registry_section  tbody  .elm5
+{
+  
+  background-color: #ffb3b3;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+.registry_section  tbody  .elm6
+{
+  
+  background-color:#ffffff;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+.registry_section  tbody  .elm7
+{
+  
+  background-color: #ffb3b3;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+.registry_section  tbody  .elm8
+{
+  
+  background-color:#ffffff;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+
+
+  /* pagination*/
+  nav .pagination{
+    margin-top: 30px;
+   margin-right: 600px;
+   
+  }
+  nav .pagination .page-item .page-link{
+    color: #000;
+  }
+  
+/* footer*/
+
+
