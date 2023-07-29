@@ -10,9 +10,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;800&display=swap" rel="stylesheet">
-
-
     <script src="/js/Blood_Donor.js"></script>
+
+    <script>
+        function solid(){
+            document.getElementById('SNot').className="fa-solid fa-bell";
+        
+        }
+        function normal(){
+            document.getElementById('SNot').className="fa-regular fa-bell";
+        }
+
+    </script>
+
 </head>
 <body>
     <div class="page d-flex">
@@ -66,8 +76,8 @@
                 
                 <div class="icons d-flex align-center">
                     <img src="/imgs/avatar.png" alt="">
-                    <span class="notification p-relative">
-                        <i class="fa-regular fa-bell"></i>
+                    <span  class="notification p-relative">
+                        <i id="SNot" onmouseover="solid()" onmouseout="normal()" class="fa-regular fa-bell"></i>
                     </span>
                     
                 </div>    
