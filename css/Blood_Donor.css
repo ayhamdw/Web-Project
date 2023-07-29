@@ -73,7 +73,7 @@ ul
     position: absolute;
     height: 100%;
     right: 0;
-    transition: 0.3s;
+    transition: 0.8s;
 
 }
 .sidebar > h3 
@@ -127,7 +127,7 @@ ul
     .sidebar{
         width: 55px;
         padding:10px;
-        transition: 0.3s;
+        transition: 0.8s;
     }
     .sidebar > h3{
         font-size: 13px;
