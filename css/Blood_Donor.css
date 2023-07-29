@@ -1,0 +1,459 @@
+:root{
+    --main-color: rgb(185, 55, 55);
+    --secondary-color:#333;
+    --third_color:rgb(15, 86, 163);
+
+
+    --blue-color: #0075ff;
+  --blue-alt-color: #0d69d5;
+  --orange-color: #f59e0b;
+  --green-color: #22c55e;
+  --red-color: #f44336;
+  --grey-color: #888;
+}
+
+
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Cairo', sans-serif;
+    margin:0;
+}
+*:focus
+{
+    outline: none;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+.page
+{
+    background-color: #f1f5f9;
+    min-height: 200vh;
+    position: relative;
+}
+
+ul 
+{
+    list-style: none;
+    padding:0;
+    text-align: center;
+    /* background-color: aqua; */
+    direction: rtl;
+}
+::-webkit-scrollbar {
+    width: 15px;
+    
+
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+    
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    
+}
+
+
+
+/* Start Sidebar */
+.sidebar
+{
+    width: 250px;
+    box-shadow: 0 0 10px #DDD;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    transition: 0.8s;
+
+}
+.sidebar > h3 
+{
+    margin-bottom: 50px;
+    position:relative;
+}
+.sidebar > h3::before
+{
+    content:"" ;
+    position: absolute;
+    background-color: var(--main-color);
+    width: 80px;
+    height: 2px;
+    position: absolute;
+    bottom: -20px;
+    transform: translateX(-50%);
+    left: 50%;
+
+}
+
+.sidebar >h3::after{
+    background-image: url(/imgs/avatar.png);
+
+
+}
+
+.sidebar ul li a 
+{
+    transition: 0.3s;
+    margin-bottom: 5px;
+
+}
+
+.sidebar ul li a:hover
+{
+    background-color: var(--main-color);
+    color:white
+}
+.sidebar ul li a
+{
+    background-color: #f6f6f6;
+}
+
+.sidebar ul li a span
+{
+    font-size: 14px;
+    margin-right: 10px;
+}
+@media(max-width:767px){
+    .sidebar{
+        width: 55px;
+        padding:10px;
+        transition: 0.8s;
+    }
+    .sidebar > h3{
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    .sidebar > h3::before,
+    .sidebar > h3::after{
+        display: none;
+    }   
+
+
+    .sidebar ul li a span {
+        display: none;
+    }
+    
+}
+
+
+/* End Sidebar */
+
+/* Start Content */
+.content 
+{
+    overflow: hidden;
+    
+    
+} 
+
+.head{
+    height: 55px;
+}
+.head .icons .notification i
+{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+
+
+
+
+.head .icons .notification::before
+{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    left: 15px;
+    top: -2px;
+} 
+.head .icons img
+{
+    
+    width: 32px;
+    height: 32px;
+    margin-left:15px;
+}
+.page h1
+{
+    direction: rtl;
+    margin-right: 270px;
+    
+}
+.page h1::before,
+.page h1::after{
+    content: " ";
+    height: 3px;
+    position:absolute;
+    bottom: -10px;
+    right:0;
+}
+.page h1::before
+{
+    background-color: var(--main-color);
+    width: 120px;
+}
+
+.page h1::after
+{
+    background-color: white;
+    width: 40px;
+}
+
+.wrapper
+{
+    margin-right: 270px;
+    margin-left: 15px;
+    direction: rtl;
+    text-align: right;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    
+}
+@media(max-width: 767px)
+{
+    .wrapper
+    {
+        
+        direction: rtl;
+        text-align: right;
+        grid-template-columns: repeat(200px, 1fr);
+        margin-right: 70px;
+        margin-left: 10px;
+        gap:10px;
+
+
+
+    }
+
+    .page h1
+    {
+        direction: rtl;
+        margin-right: 70px;
+        
+    }
+    
+
+}
+
+.wrapper h2
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* End Content */
+
+
+
+
+
+
+
+.welcome
+{
+    overflow: hidden;
+}
+
+
+.welcome .intro img
+{
+    
+    width:200px;
+    height: 100px;
+    margin-bottom: -10px;
+}
+.welcome .avatar
+{
+    width: 64px;
+    height: 64px;
+    border: 2px solid white;
+    border-radius:50%;
+    padding: 2px;
+    box-shadow: 0 0 5px #ddd;
+    margin-right: 20px;
+    margin-top:-32px;
+}
+
+.welcome .body
+{
+    
+    border-bottom: 1px solid #eee;
+}
+
+.welcome .body > div
+{ 
+    flex: 1;
+
+}
+
+
+.welcome .visit
+{
+    margin: 0 auto 15px 15px;
+    margin-right: auto;
+    /* transition: 0.3s; */
+    cursor: pointer;
+    background-color: var(--main-color);
+    font-family: 'Cairo', sans-serif;
+}
+
+.welcome .visit:hover
+{
+    color: black;
+    background-color: white;
+    border: 2px solid var(--main-color);
+}
+
+
+@media(max-width:767px)
+{
+    .welcome .intro {
+        padding-bottom: 30px;
+
+    }
+    .welcome .avatar
+    {
+        margin-right: 0;
+    }
+    .welcome .body > div:not(:last-child){
+        margin-bottom: 20px;
+    }
+    .quick-draft
+    {
+        margin-top: 20px;
+    }
+    
+}
+
+
+
+/* Start Quick Draft */
+
+
+.quick-draft textarea{
+    resize: none;
+    min-height: 180px;
+    
+}
+.quick-draft .save{
+    margin-right: auto;
+    /* transition: 0.3s; */
+    cursor: pointer;
+    background-color: var(--main-color);
+    font-family: 'Cairo', sans-serif;
+
+}
+.quick-draft .save:hover{
+    color: black;
+    background-color: white;
+    border: 2px solid var(--main-color);
+
+
+}
+.name-input
+{
+    font-family: 'Cairo', sans-serif;
+   
+}
+
+.confirm
+{
+    color: #888;
+}
+
+/* End Quick Draft */
+
+/* Table */
+.projects
+{
+    direction: rtl;
+
+    margin-right: 270px;
+}
+
+@media(max-width:767px)
+{
+    .projects{
+        margin-right: 70px;
+        margin-left: 10px;
+        
+    }
+}
+
+.projects .responsive-table
+{
+    overflow-x: auto;
+}
+.projects table
+{
+    min-width: 1000px;
+
+
+}
+.projects thead td
+{
+    background-color: #eee;
+    font-weight: bold;
+}
+.projects table td
+{
+    padding: 15px;
+}
+
+.projects tbody td
+{
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+
+}
+.projects .responsive-table {
+    overflow-x: auto;
+  }
+  .projects table {
+    min-width: 1000px;
+    border-spacing: 0;
+  }
+  .projects thead td {
+    background-color: #eee;
+    font-weight: bold;
+  }
+  .projects table td {
+    padding: 15px;
+  }
+  .projects tbody td {
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    transition: 0.3s;
+  }
+  .projects table tbody tr td:last-child {
+    border-right: 1px solid #eee;
+  }
+  .projects tbody tr:hover td {
+    background-color: #faf7f7;
+  }
+  .projects table img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 2px;
+    background-color: white;
+  }
+  .projects table img:not(:first-child) {
+    margin-left: -20px;
+  }
+  .projects table .label {
+    font-size: 13px;
+  }
