@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Bootstrap Link-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+    <!--English Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!--Main Css File-->
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/adminPatient.css">
+</head>
+
+  <body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> 
+          <i class='bx bx-menu' id="header-toggle" style="color: rgb(188, 55, 55);"></i> 
+        </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div> 
+              <a href="admin.html" class="nav_logo" style="text-decoration: none;"> 
+                <i class="fa-solid fa-droplet" style="color: #ffffff; font-size: 25px;"></i>
+                <span class="nav_logo-name">Admin Page</span> 
+              </a>
+                <div class="nav_list"> 
+                  <a href="admin.html" class="nav_link "> 
+                    <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+                    <span class="nav_name">Patient</span> 
+                  </a> 
+                  <a href="adminPatient.html" class="nav_link active"> 
+                    <i class="fa-solid fa-hospital-user" style="color: #ffffff;"></i>
+                    <span class="nav_name">Patient</span> 
+                  </a> <a href="admainDonar.html" class="nav_link"> 
+                    <i class="fa-solid fa-hand-holding-medical" style="color: #ffffff;"></i> 
+                    <span class="nav_name">Donar</span> 
+                  </a> <a href="#" class="nav_link"> 
+                    <i class="fa-solid fa-code-pull-request" style="color: #ffffff;"></i> 
+                    <span class="nav_name">Request</span> </a> 
+                    <a href="#" class="nav_link"> 
+                      <i class="fa-regular fa-user" style="color: #ffffff;"></i>
+                      <span class="nav_name">Profile</span> 
+                    </a> <a href="#" class="nav_link"> 
+                      <i class="fa-solid fa-arrow-right-from-bracket" style="color: #ffffff;"></i>
+                      <span class="nav_name">Logout</span> 
+                  </div>
+            </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+        </nav>
+    </div>
+    <!--Container Main start-->
+  <div class="row">
+    <div class="col-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 col-xl-9 mx-auto">
+            <div class="card flex-row my-4 border-0 shadow rounded-3 overflow-hidden">
+              <div class="card-body p-4 p-sm-5">
+                <h5 class="card-title text-center mb-4 fw-light fs-5">Patient Register</h5>
+                <form>
+                  <div class="form-floating mb-3">
+                    <label style="display: inline;">
+                      <input type="text" required="required" style="display: inline; max-width: 110px;"/>
+                      <span>First Name</span>
+                    </label>
+                    <label style="display: inline; margin-left: 4px;">
+                      <input type="text" required="required" style="display: inline; max-width: 110px;"/>
+                      <span>Second Name</span>
+                    </label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <label style="display: inline; margin-left: 4px;">
+                      <input type="text" required="required"/>
+                      <span>Email or Username</span>
+                    </label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <label>
+                      <input type="password" required="required"/>
+                      <span>Your Password</span>
+                    </label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <label>
+                      <input type="password" required="required"/>
+                      <span>Confirm Password</span>
+                    </label>
+                  </div>
+                  <div class="form-floating mb-3">
+                      <label>
+                        <input type="date" class="form-control" id="date" required  name="date" style="height: 60px;">
+                        <span>Date</span>
+                      </label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <label>
+                      <input type="text" required="required"/>
+                      <span>City</span>
+                    </label>
+                    <label for="">
+                      <select class="form-select" aria-label="Default select example" style="width:75% ">
+                        <option selected>Blood Unit</option>
+                        <option value="1">A+</option>
+                        <option value="2">A-</option>
+                        <option value="3">B+</option>
+                        <option value="4">B-</option>
+                        <option value="5">AB+</option>
+                        <option value="6">AB-</option>
+                        <option value="7">O+</option>
+                        <option value="8">O-</option>
+                      </select>
+                    </label>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-7">
+      <div class="container mt-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-md-12">
+                        <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Search within table</h2>
+                        <div style="display: flex; justify-content: flex-end; align-items: center;">
+                          <i class="fa-solid fa-trash" style="color: #bc3737; font-size: 25px; margin: 10px;" ></i>
+                          <i class="fa-solid fa-pen-to-square" style="color: #18d3ec; font-size: 25px"></i>
+                        </div>
+                        <div class="input-group md-form form-sm form-2 pl-0">
+                            <input class="form-control my-0 py-1 pl-3 purple-border" type="text" placeholder="Search something here..." aria-label="Search">
+                            <span class="input-group-addon waves-effect purple lighten-2" id="basic-addon1"><a><i class="fa fa-search white-text" aria-hidden="true"></i></a></span>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+                <!--Table-->
+                <table class="table table-striped">
+                    <!--Table head-->
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Username</th>
+                            <th>F Name</th>
+                            <th>S Name</th>
+                            <th>City</th>
+                            <th>Blood Type</th>
+                            
+                        </tr>
+                    </thead>
+                    <!--Table head-->
+                    <!--Table body-->
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>ayh00am</td>
+                            <td>Ayham</td>
+                            <td>Omar</td>
+                            <td>Qalqilya</td>
+                            <td>O+</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>shareef@111</td>
+                            <td>Shareef</td>
+                            <td>Emad</td>
+                            <td>Qalqilya</td>
+                            <td>AB+</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>wasan@gmail.com</td>
+                            <td>Wasan</td>
+                            <td>Awwad</td>
+                            <td>Nablus</td>
+                            <td>O+</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">1</th>
+                            <td>ayh00am</td>
+                            <td>Ayham</td>
+                            <td>Omar</td>
+                            <td>Qalqilya</td>
+                            <td>O+</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>shareef@111</td>
+                        <td>Shareef</td>
+                        <td>Emad</td>
+                        <td>Qalqilya</td>
+                        <td>AB+</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>wasan@gmail.com</td>
+                      <td>Wasan</td>
+                      <td>Awwad</td>
+                      <td>Nablus</td>
+                      <td>O+</td>
+                  </tr>
+                    </tbody>
+                    <!--Table body-->
+                </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+    
+
+
+    <!-- /#wrapper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0/js/bootstrap.min.js" integrity="sha512-Pv/SmxhkTB6tWGQWDa6gHgJpfBdIpyUy59QkbshS1948GRmj6WgZz18PaDMOqaEyKLRAvgil7sx/WACNGE4Txw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
