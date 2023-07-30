@@ -1,0 +1,161 @@
+
+
+.container-fluid{
+    background-color: #eee;
+}
+
+
+
+.navbar .container-fluid{
+    background-color: #5c85d6;
+  }
+  .navbar-brand{
+    color: #fff
+  }
+/* table*/
+  .registry_section
+{
+    
+  background-color: #eee;
+  margin-bottom: 70px;
+}
+
+
+
+.registry_section .registry_Transfer_table
+{
+    margin-top: 70px;
+    margin-bottom: 30px;
+  margin-right: 250px;
+  overflow-x: auto;
+}
+
+
+.registry_section table
+{
+    
+  min-width: 50px;
+  text-align: center;
+}
+.registry_section  thead td
+{
+  background-color: #ffffff;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  font-weight: bold;
+}
+.registry_section  table td
+{
+   
+  padding: 10px;
+  min-width: 250px;
+  border-spacing: 0;
+
+}
+
+
+.registry_section  tbody  .elm1
+{
+  background-color:  #ffb3b3;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+.registry_section  tbody  .elm2
+{
+  
+  background-color:#ffffff;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+
+.registry_section  tbody  .elm3
+{
+  
+  background-color: #ffb3b3;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+
+.registry_section  tbody  .elm4
+{
+  
+  background-color:#ffffff;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+.registry_section  tbody  .elm5
+{
+  
+  background-color: #ffb3b3;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+.registry_section  tbody  .elm6
+{
+  
+  background-color:#ffffff;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+.registry_section  tbody  .elm7
+{
+  
+  background-color: #ffb3b3;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+.registry_section  tbody  .elm8
+{
+  
+  background-color:#ffffff;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s;
+}
+/* footer*/
+.footer {
+    margin-top: 170px;
+    margin-bottom: 0px;
+    height: 200px;
+   background-color:#5c85d6;
+   
+  }
+  
+  .container-fluid .footer .container .content_footer img{
+  width: 20%;
+
+  }
+  
+  .footer .container .content_footer .scoial_midea i{
+    color: #fff;
+  }
+  .footer .container  .Contact_Details {
+    color: #fff;
+  }
+  .footer .container .Opening_Hours h3{
+    
+    color: #fff;
+  
+  }
+  .footer .container .Opening_Hours .h{
+    font-size: 15px;
+    color: #fff;
+  
+  }
