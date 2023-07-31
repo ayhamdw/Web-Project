@@ -3,6 +3,7 @@ body {
     overflow-x: hidden;
     font-family: 'Caladea', serif;
     background-color: #f2f2f2;
+    height: 100%
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
@@ -549,4 +550,8 @@ span {
     background-color: rgb(240, 55, 55);
     text-decoration: none;
     transition: 0.3s;
+}
+
+#col-5 {
+    height: 100%;
 }
