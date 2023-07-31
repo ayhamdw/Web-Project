@@ -303,14 +303,17 @@ body
     border-radius: 10px;
     box-shadow: 2px 3px 15px 5px #c4c3c3;
     transition: 0.7s;
+    
 }
-.feat:hover
+
+.feat:hover 
 {
     
     transform: translateY(-15px) scale(1.06);   
     color: white;
     background-color:var(--main-color);
 }
+
 
 
 
@@ -407,6 +410,33 @@ body
         display: none;
     }
 }
+
+.Services-content .map
+{
+    margin-left: 400px;
+    align-items: center;
+}
+.Services-content .map img
+{
+    /* align-items: center; */
+    position:absolute;
+    height: 700px;
+}
+
+@media(max-width:767px)
+{
+    .Services-content .map
+    {
+        margin-left: 200px;
+    }
+}
+
+
+area:hover {
+    display: block;
+    background-color:red;
+}
+
 
 
 
