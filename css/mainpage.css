@@ -179,14 +179,17 @@ ul {
 }
 
 .benefits::before {
+    content: "";
     left: -30%;
 }
 
 .benefits::after {
+    content: "";
     right: -30%;
 }
 
 .benefits:hover::before {
+    content: "";
     z-index: -1;
     animation: BenefitsAnimationLeft 0.5s linear forwards;
 }
@@ -318,14 +321,16 @@ ul {
 
 /* section3 review*/
 /* puplic */
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Amiri', serif;
 }
+
 /* head proprity*/
 
 .review_head {
@@ -346,48 +351,50 @@ body {
     font-size: 1.2em;
     font-weight: 550;
     font-family: 'Montserrat', sans-serif;
-  }
-  
-  .review_head .button_head:hover {
-    background:  #80bfff;
+}
+
+.review_head .button_head:hover {
+    background: #80bfff;
     color: white;
     font-size: 1.5em;
-  }
-   
+}
 
-.review_body{
+
+.review_body {
     padding-left: 20px;
     padding-right: 40px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    
-}
-.review_body .element{
-    width:20%;
-    margin-left: 50px;
-    margin-bottom: 100px;
- 
+
 }
 
-.review_body .element .content{
+.review_body .element {
+    width: 20%;
+    margin-left: 50px;
+    margin-bottom: 100px;
+
+}
+
+.review_body .element .content {
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: left;
 }
 
-.review_body .element .content .icon_element{
-   margin-top: 10px;
-   margin-bottom: 10px;
+.review_body .element .content .icon_element {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.review_body .element .content .Btn{
-   margin-top: 30px;
-   margin-right: 70px;
-   
+.review_body .element .content .Btn {
+    margin-top: 30px;
+    margin-right: 70px;
+
 
 }
+
 /* proprity button like*/
 .Btn {
     width: 140px;
@@ -401,10 +408,10 @@ body {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.089);
     cursor: pointer;
     background-color: transparent;
-    
-  }
-  
-  .leftContainer {
+
+}
+
+.leftContainer {
     width: 60%;
     height: 100%;
     background-color: rgb(238, 0, 0);
@@ -412,15 +419,15 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    
-  }
-  
-  .leftContainer .like {
+
+}
+
+.leftContainer .like {
     color: white;
     font-weight: 600;
-  }
-  
-  .likeCount {
+}
+
+.likeCount {
     width: 40%;
     height: 100%;
     display: flex;
@@ -430,10 +437,10 @@ body {
     font-weight: 600;
     position: relative;
     background-color: white;
-    
-  }
-  
-  .likeCount::before {
+
+}
+
+.likeCount::before {
     height: 8px;
     width: 8px;
     position: absolute;
@@ -441,22 +448,21 @@ body {
     background-color: rgb(255, 255, 255);
     transform: rotate(45deg);
     left: -4px;
-  }
-  
-  .Btn:hover .leftContainer {
+}
+
+.Btn:hover .leftContainer {
     background-color: rgb(219, 0, 0);
-  }
-  
-  .Btn:active .leftContainer {
+}
+
+.Btn:active .leftContainer {
     background-color: rgb(201, 0, 0);
-  }
-  
-  .Btn:active .leftContainer svg {
+}
+
+.Btn:active .leftContainer svg {
     transform: scale(1.15);
     transform-origin: top;
-  }
+}
 
-  
 
-  /*  end section 3 review */
-        
+
+/*  end section 3 review */

@@ -15,16 +15,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <!--Main Css File-->
-   <link rel="stylesheet" href="../css/adminSetting.css">
-   <link rel="stylesheet" href="../css/admin.css">
+    <!-- <link rel="stylesheet" href="../css/adminSetting.css"> -->
+
+    <link rel="stylesheet" href="../css/adminSetting.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/admin.request.css">
 </head>
 
   <body id="body-pd">
     <header class="header" id="header">
-        <div class="header_toggle"> 
-          <i class='bx bx-menu' id="header-toggle" style="color: rgb(188, 55, 55);"></i> 
-        </div>
-    </header>
+      <div class="header_toggle"> 
+        <i class='bx bx-menu' id="header-toggle" style="color: rgb(188, 55, 55); font-size: 25px"></i> 
+      </div>
+  </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> 
@@ -43,7 +46,7 @@
                   </a> <a href="admainDonar.html" class="nav_link"> 
                     <i class="fa-solid fa-hand-holding-medical" style="color: #ffffff;"></i> 
                     <span class="nav_name">Donar</span> 
-                  </a> <a href="#" class="nav_link"> 
+                  </a> <a href="adminRequest.html" class="nav_link"> 
                     <i class="fa-solid fa-code-pull-request" style="color: #ffffff;"></i> 
                     <span class="nav_name">Request</span> </a> 
                     <a href="adminProfile.html" class="nav_link active"> 
@@ -70,7 +73,8 @@
                             <div class="col-md-6"><label class="labels">Second Name</label><input type="text" class="form-control" value="" placeholder="Second name"></div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Email/Username</label><input type="text" class="form-control" placeholder="Enter Email/Username" value=""></div>
+                            <div class="col-md-12"><label class="labels">Username</label><input type="text" class="form-control" placeholder="Enter Username" value=""></div>
+                            <div class="col-md-12"><label class="labels">Email</label><input type="email" class="form-control" placeholder="Enter Email" value=""></div>
                             <div class="col-md-12"><label class="labels">City </label><input type="text" class="form-control" placeholder="Enter City" value=""></div>
                             <div class="col-md-12"><label class="labels">Phone Number</label><input type="text" class="form-control" placeholder="Enter Your Phone Number" value=""></div>
                             <div class="col-md-12"><label class="labels">Birth Date</label><input type="date" class="form-control" placeholder="Enter Your Birthday" value=""></div>
