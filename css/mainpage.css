@@ -145,7 +145,7 @@ ul {
     border-left: 2px solid black;
     overflow: hidden;
     white-space: nowrap;
-    animation: control_width 3s steps(43) 1s both  ;
+    animation: control_width 3s steps(40) 1s both  ;
    
 }
 
