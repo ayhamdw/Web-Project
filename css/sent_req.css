@@ -2,11 +2,12 @@
 
 .container-fluid{
     background-color: #eee;
+    height: 100vh;
 }
 
 
 
-.navbar .container-fluid{
+.navbar {
     background-color: #5c85d6;
   }
   .navbar-brand{
