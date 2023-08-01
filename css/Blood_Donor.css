@@ -550,7 +550,7 @@ ul
         margin-right: 200px;
         /* margin-top:300px; */
         /* height: 800px; */
-        box-shadow:-5px -2px 5px #727272;
+        box-shadow:-5px -2px 5px #5a5a5a;
         direction: rtl;
     }
     .footer::before{
@@ -560,7 +560,7 @@ ul
         top:0;
         width:100%;
         height:100%;
-        background-color: #535353;
+        background-color: #828282;
         
 
     }
@@ -582,6 +582,9 @@ ul
         font-size: 22px;
         width: fit-content;
         margin:20px auto;
+    }
+    .footer p:not(.copyright) span{
+        color: var(--main-color);
     }
 
 
