@@ -3,17 +3,18 @@
 :root{
   --main-color: rgb(185, 55, 55);
 }
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Cairo&family=Roboto:wght@100&display=swap');
 
+body{
+  font-family: 'Amiri', serif;
+}
 * { 
     margin : 0;
     padding: 0;
     box-sizing : border-box;
 
 
-    /* font-familly : "Poppins", sans-serif; */
-    font-family : "Poppins", sans-serif;
-
-    /* font-family: 'Cairo', sans-serif;  */
+   
   }
 
 .navbar-brand{

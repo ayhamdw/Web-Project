@@ -450,14 +450,15 @@ body {
 }
 
 .review_body .element .content .Btn {
-    margin-top: 30px;
+    margin-top: 40px;
     margin-right: 70px;
 
 
 }
 
 /* proprity button like*/
-.Btn {
+ .Btn {
+    
     width: 140px;
     height: 35px;
     display: flex;
