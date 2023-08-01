@@ -139,7 +139,27 @@ ul {
     position: absolute;
     top: 130px;
     font-size: 30px;
+    width: 411.23;
+    height: 50px;
+    margin: 30px auto;
+    border-left: 2px solid black;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: control_width 3s steps(43) 1s both  ;
+   
 }
+
+@keyframes control_width {
+    from{
+        width:0;
+    }
+    to{
+        width:411.23px;
+    }
+    
+}
+
+
 
 .firstsection .container .paragraph h1 span {
     color: rgb(204, 0, 0);
