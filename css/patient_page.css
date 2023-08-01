@@ -8,10 +8,12 @@
     margin : 0;
     padding: 0;
     box-sizing : border-box;
+
+
     /* font-familly : "Poppins", sans-serif; */
     font-family : "Poppins", sans-serif;
 
-    font-family: 'Cairo', sans-serif; 
+    /* font-family: 'Cairo', sans-serif;  */
   }
 
 .navbar-brand{
