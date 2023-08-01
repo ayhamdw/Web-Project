@@ -390,50 +390,34 @@ body {
 
 }
 
-button {
-    width: 10em;
+.estimate {
+    text-align: center;
+    width: 150px;
     position: relative;
-    height: 3.5em;
-    border: 3px ridge #149CEA;
+    height: 55px;
+    border: 3px dashed var(--main-color);
     outline: none;
     background-color: transparent;
-    color: white;
-    transition: 1s;
-    border-radius: 0.3em;
-    font-size: 16px;
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+    border-radius: 15px;
+    font-size: 25px;
     font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Cairo', sans-serif;
   }
   
-  button::after {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 3%;
-    width: 95%;
-    height: 40%;
-    background-color: #212121;
-    transition: 0.5s;
-    transform-origin: center;
-  }
   
-  button::before {
-    content: "";
-    transform-origin: center;
-    position: absolute;
-    top: 80%;
-    left: 3%;
-    width: 95%;
-    height: 40%;
-    background-color: #212121;
-    transition: 0.5s;
-  }
-  
-  button:hover::before, button:hover::after {
+  .estimate:hover::before, button:hover::after {
     transform: scale(0)
   }
   
-  button:hover {
-    box-shadow: inset 0px 0px 25px #1479EA;
+  .estimate:hover {
+    box-shadow: inset 0px 0px 70px var(--main-color);
+    color: white;
+    border-style: solid;
+    transform: scale(1.1);
+    
   }
 
 
