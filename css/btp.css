@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Cairo&family=Roboto:wght@100&display=swap');
+
+body{
+  font-family: 'Amiri', serif;
+}
+.navbar .container-fluid{
+    background-color: #828282;
+    margin-bottom: 40px;
+}
+.container-fluid{
+    background-color: #eee;
+  
+}
