@@ -1,5 +1,7 @@
+
+
 .navbar{
-    background-color: #5c85d6;
+    background-color: #828282;
   margin-bottom: 50px;
 }
 
@@ -7,7 +9,7 @@
 
 body{
   font-family: 'Amiri', serif;
-} 
+}
 
 /* form*/
 .singup {
@@ -33,7 +35,7 @@ body{
     border-radius: 15px;
     background:  rgb(185, 55, 55);
     box-shadow: 16px 16px 32px #c8c8c8,
-          -16px -16px 32px #fefefe;
+    -16px -16px 32px #fefefe;
     border-radius: 8px;
   }
   
@@ -215,7 +217,7 @@ svg path{
   
 
 }
-.footer .container
+.footer .container_footer
 {
   position: relative;
 
