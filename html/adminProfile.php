@@ -1,4 +1,44 @@
 
+<?php
+$conn = new mysqli("localhost", "root" , "", "web_project");
+$sqlQuery = " SELECT * FROM `admin` ";
+$result = mysqli_query($conn , $sqlQuery);
+$row = mysqli_fetch_assoc($result);
+
+    $firstName = $row["FirstName"];
+    $secondName = $row["SecondName"];
+    $userName = $row["UserName"];
+    $Email = $row["Email"];
+    $City = $row["City"];
+    $PhoneNumber = $row["PhoneNumber"];
+    $password = $row["Password"];
+?>
+<?php
+if (isset($_POST['FName'])){
+  $fname = $_POST["FName"];
+  $secondName = $_POST["SName"];
+  $user = $_POST["user"];
+  $email = $_POST["email"];
+  $city = $_POST["city"];
+  $phoneNumber = $_POST["phone"];
+  $password = $_POST["pass1"];
+  $confirm = $_POST["pass2"];
+  if (empty($password) or empty($confirm)){
+    $sqlQuery = "UPDATE `admin` SET `FirstName`='$fname',`SecondName`='$secondName',`UserName`='$user',`Email`='$email',`City`='$city',`PhoneNumber`='$phoneNumber'";
+    $conn->query($sqlQuery);
+  }
+  elseif($password!=$confirm) {
+    echo '<script>alert("Welcome to Geeks for Geeks")</script>';
+  }
+  else {
+    $sqlQuery = "UPDATE `admin` SET `FirstName`='$fname',`SecondName`='$secondName',`UserName`='$user',`Email`='$email',`City`='$city',`PhoneNumber`='$phoneNumber' , `password` = '$password'";
+    $conn->query($sqlQuery);
+  }
+}
+  
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,28 +71,30 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> 
-              <a href="admin.html" class="nav_logo" style="text-decoration: none;"> 
+              <a href="admin.php" class="nav_logo" style="text-decoration: none;"> 
                 <i class="fa-solid fa-droplet" style="color: #ffffff; font-size: 25px;"></i>
                 <span class="nav_logo-name">Admin Page</span> 
               </a>
                 <div class="nav_list"> 
-                  <a href="admin.html" class="nav_link "> 
+                  <a href="admin.php" class="nav_link "> 
                     <i class="fa-solid fa-house" style="color: #ffffff;"></i>
                     <span class="nav_name">Home</span> 
                   </a> 
-                  <a href="adminPatient.html" class="nav_link"> 
+                  <a href="adminPatient.php" class="nav_link"> 
                     <i class="fa-solid fa-hospital-user" style="color: #ffffff;"></i>
                     <span class="nav_name">Patient</span> 
-                  </a> <a href="admainDonar.html" class="nav_link"> 
+                  </a> 
+                  <a href="adminDonar.php" class="nav_link"> 
                     <i class="fa-solid fa-hand-holding-medical" style="color: #ffffff;"></i> 
                     <span class="nav_name">Donar</span> 
-                  </a> <a href="adminRequest.html" class="nav_link"> 
+                  </a> <a href="adminRequest.php" class="nav_link"> 
                     <i class="fa-solid fa-code-pull-request" style="color: #ffffff;"></i> 
                     <span class="nav_name">Request</span> </a> 
-                    <a href="adminProfile.html" class="nav_link active"> 
+                    <a href="adminProfile.php" class="nav_link active"> 
                       <i class="fa-regular fa-user" style="color: #ffffff;"></i>
                       <span class="nav_name">Profile</span> 
-                    </a> <a href="#" class="nav_link"> 
+                    </a> 
+                    <a href="#" class="nav_link"> 
                       <i class="fa-solid fa-arrow-right-from-bracket" style="color: #ffffff;"></i>
                       <span class="nav_name">Logout</span> 
                   </div>
@@ -68,46 +110,36 @@
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4 class="text-right">Profile Settings</h4>
                         </div>
-                        <div class="row mt-2">
-                            <div class="col-md-6"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="First name" value=""></div>
-                            <div class="col-md-6"><label class="labels">Second Name</label><input type="text" class="form-control" value="" placeholder="Second name"></div>
-                        </div>
+                        
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Username</label><input type="text" class="form-control" placeholder="Enter Username" value=""></div>
-                            <div class="col-md-12"><label class="labels">Email</label><input type="email" class="form-control" placeholder="Enter Email" value=""></div>
-                            <div class="col-md-12"><label class="labels">City </label><input type="text" class="form-control" placeholder="Enter City" value=""></div>
-                            <div class="col-md-12"><label class="labels">Phone Number</label><input type="text" class="form-control" placeholder="Enter Your Phone Number" value=""></div>
-                            <div class="col-md-12"><label class="labels">Birth Date</label><input type="date" class="form-control" placeholder="Enter Your Birthday" value=""></div>
-                            <div class="col-md-12"><label class="labels">Blood Type</label><select class="form-select" aria-label="Default select example" style="width:75% ">
-                                <option selected>Blood Unit</option>
-                                <option value="1">A+</option>
-                                <option value="2">A-</option>
-                                <option value="3">B+</option>
-                                <option value="4">B-</option>
-                                <option value="5">AB+</option>
-                                <option value="6">AB-</option>
-                                <option value="7">O+</option>
-                                <option value="8">O-</option>
-                              </select>
-                            </div>
+                          <form action="adminProfile.php" method="post" id='formId'>
+                          <div class="row mt-2">
+                            <div class="col-md-6"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="First name" value="<?php echo $firstName; ?>" name = "firstName" id="firstName"></div>
+                            <div class="col-md-6"><label class="labels">Second Name</label><input type="text" class="form-control" value="<?php echo $secondName; ?>" placeholder="Second name" name = "secondName" id="secondName"></div>
                         </div>
-                        <div class="mt-5 text-center"><button id="button"></button></div>
+                          <div class="col-md-12"><label class="labels">Username</label><input type="text" class="form-control" placeholder="Enter Username" value="<?php echo $userName; ?>" name = "userName" id="userName"></div>
+                            <div class="col-md-12"><label class="labels">Email</label><input type="email" class="form-control" placeholder="Enter Email" value="<?php echo $Email; ?>" name = "Email" id="Email"></div>
+                            <div class="col-md-12"><label class="labels">City </label><input type="text" class="form-control" placeholder="Enter City" value="<?php echo $City; ?>" name = "city" id="City"></div>
+                            <div class="col-md-12"><label class="labels">Phone Number</label><input type="text" class="form-control" placeholder="Enter Your Phone Number" value="<?php echo $PhoneNumber; ?>" name = "phoneNumber" id="phoneNumber"></div>
+                            <div class="mt-5 text-center"><input type = "submit" id="button1" onclick = "SendData()"></input></div>
+
+                            
+                        </div>
+                        
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="p-3 py-5">
-                        <div ></div><br> <br>
-                        <div class="col-md-12"><label class="labels">Your Old Password</label><input type="password" class="form-control" placeholder="Old Password" value=""></div> <br>
-                        <div class="col-md-12"><label class="labels">Your New Password</label><input type="password" class="form-control" placeholder="New Password" value=""></div> <br>
-                        <div class="col-md-12"><label class="labels">Confirm Your Password</label><input type="password" class="form-control" placeholder="Confirm Password" value=""></div>
-                    </div>
+                <div class="col-md-4 mt-5">
+                  <div class="p-3 py-5 mt-3">
+                  <div class="col-md-12"><label class="labels">Your New Password</label><input type="password" class="form-control" placeholder="New Password" value="" id="password"></div> <br>
+                    <div class="col-md-12"><label class="labels">Confirm Your Password</label><input type="password" class="form-control" placeholder="Confirm Password" value="" id="confirmPassword"></div>
                 </div>
+              </div>
+            </form>
             </div>
         </div>
-        </div>
-        </div>
+      </div>
     </div>
-    
+    </div>
 
 
     <!-- /#wrapper -->
@@ -115,6 +147,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     <script src="../js/admin.js"></script>
+    <script src = "../js/adminProfile.js"></script>
     <script>
         $(function() {
   $( "#button" ).click(function() {

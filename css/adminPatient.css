@@ -286,3 +286,120 @@ select {
     color: #fff;
     background-color: #49e2bb;
 }
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: rgb(188, 55, 55);
+}
+
+.profile-button {
+    background: rgb(188, 55, 55);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: rgb(188, 55, 55);
+}
+
+.profile-button:focus {
+    background: rgb(188, 55, 55);
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: rgb(188, 55, 55);
+    box-shadow: none
+}
+
+.back:hover {
+    color: rgb(188, 55, 55);
+    cursor: pointer
+}
+
+.labels {
+    font-size: 12px
+}
+
+.add-experience:hover {
+    background: rgb(188, 55, 55);
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px rgb(188, 55, 55);
+}
+
+:root {
+    --green: rgb(188, 55, 55);
+    --gray: #bbbbbb;
+}
+
+
+
+.button {
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 130px;
+    border-radius: 40px;
+    background: #fff;
+    border: 2px solid var(--green);
+    color: var(--green);
+    letter-spacing: 1px;
+    text-shadow: 0;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.button:hover {
+    color: white;
+    background: var(--green);
+}
+
+.button:active {
+    letter-spacing: 1px;
+}
+
+.button:after {
+    content: "SUBMIT";
+}
+
+.onclic {
+    width: 40px;
+    border-color: var(--gray);
+    border-width: 3px;
+    font-size: 0;
+    border-left-color: var(--green);
+    animation: rotating 1s 0.25s linear infinite;
+}
+
+.onclic:hover {
+    color: var(--green);
+    background: white;
+}
+
+.validate {
+    font-size: 13px;
+    color: white;
+    background: var(--green);
+}
+
+.validate:after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#flexRadioDefault1 {
+    background-color: #ea4335;
+}
