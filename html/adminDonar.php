@@ -144,7 +144,7 @@ $conn->query($sqlQuery);
                       <span>Date</span>
                     </label>
                     <label for="">
-                      <select class="form-select" aria-label="Default select example" style="width:75%" name="bloodType">
+                      <select class="form-select" aria-label="Default select example" style="width:100%" name="bloodType">
                         <option selected>Blood Unit</option>
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>

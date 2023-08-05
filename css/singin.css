@@ -1,189 +1,176 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Cairo&family=Roboto:wght@100&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Poppins:300);
 
-body{
-  font-family: 'Amiri', serif;
+*, *:before, *:after {
+  box-sizing: border-box;
+  font-family: 'Caladea', serif;
+
 }
 
-body{
-	
-	font-weight: 300;
-	line-height: 1.7;
-	color:white;
-	background-color:#2b2e38;
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: 'Caladea', serif;
 }
+
+body {
+  width: 100%;
+  background: rgb(59, 59, 59);
+  overflow-y: hidden !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Caladea', serif;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(188, 55, 55);
+  transition: 0.5s ease;
+}
+
 a:hover {
-	text-decoration: none;
+  color: rgb(220, 55, 55);
 }
-.link {
-  color:white;
+
+.form {
+  background: #272727;
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, .3);
 }
-.link:hover {
-  color: #c4c3ca;
-}
-p {
-  font-weight: 500;
-  font-size: 14px;
-}
-h4 {
-  margin-top: ;
-  font-weight: 600;
-}
-h6 span{
-  padding: 0 20px;
-  font-weight: 700;
-}
-.section{
-  margin-top: 5px;
-  position: relative;
-  width: 100%;
-  display: block;
-}
-.full-height{
-  min-height: 100vh;
-}
-[type="checkbox"]:checked,
-[type="checkbox"]:not(:checked){
-display: none;
-}
-.checkbox:checked + label,
-.checkbox:not(:checked) + label{
-  position: relative;
-  display: block;
-  text-align: center;
-  width: 60px;
-  height: 16px;
-  border-radius: 8px;
+
+.tab-group {
+  list-style: none;
   padding: 0;
-  margin: 10px auto;
-  cursor: pointer;
-  background-color:white;
+  margin: 0 0 40px 0;
 }
-.checkbox:checked + label:before,
-.checkbox:not(:checked) + label:before{
-  position: absolute;
+
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.tab-group li a {
   display: block;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  color: rgb(185, 55, 55);;
-  background-color: #020305;
-  font-family: 'unicons';
-  content: '\eb4f';
-  z-index: 20;
-  top: -10px;
-  left: -10px;
-  line-height: 36px;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, .25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 48%;
   text-align: center;
-  font-size: 24px;
-  transition: all 0.5s ease;
+  cursor: pointer;
+  transition: 0.5s ease;
 }
-.checkbox:checked + label:before {
-  transform: translateX(44px) rotate(-270deg);
+
+.tab-group li a:hover {
+  background: rgb(220, 55, 55);
+  color: #fff;
 }
-.card-3d-wrap {
-  position: relative;
-  width: 440px;
-  max-width: 100%;
-  height: 650px; /*modify*/
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  perspective: 800px;
-  margin-top: 60px;
+
+.tab-group .active a {
+  background: rgb(188, 55, 55);
+  color: #fff;
 }
-.card-3d-wrapper {
+
+.tab-content>div:last-child {
+  display: none;
+}
+
+.tab-group {
+  border-radius: 15px !important;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+input, textarea {
+  font-size: 17px;
+  display: block;
   width: 100%;
   height: 100%;
-  position:absolute;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  transition: all 600ms ease-out; 
-}
-.card-front, .card-back {
-  width: 100%;
-  height: 100%;
-  background-color:rgb(185, 55, 55);;
-  background-image: url('/img/pattern_japanese-pattern-2_1_2_0-0_0_1__ffffff00_000000.png');
-  position: absolute;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid rgb(188, 55, 55);
+  color: #fff;
   border-radius: 6px;
-  -webkit-transform-style: preserve-3d;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
 }
-.card-back {
-  transform: rotateY(180deg);
+
+textarea {
+  border: 2px solid rgb(188, 55, 55);
+  ;
+  resize: vertical;
 }
-.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
-  transform: rotateY(180deg);
-}
-.center-wrap{
-  position: absolute;
-  width: 100%;
-  padding: 0 35px;
-  top: 50%;
-  left: 0;
-  transform: translate3d(0, -50%, 35px) perspective(100px);
-  z-index: 20;
-  display: block;
-}
-.form-group{ 
+
+.field-wrap {
   position: relative;
+  margin-bottom: 40px;
+}
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.top-row>div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+
+.top-row>div:last-child {
+  margin: 0;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 15px;
+  padding: 15px 0;
+  font-size: 20px;
+  font-weight: 400;
+  background: rgb(188, 55, 55);
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+
+.button:hover, .button:focus {
+  background: rgb(188, 55, 55);
+  ;
+}
+
+.button-block {
   display: block;
-    margin: 0;
-    padding: 0;
-}
-.form-style {
-  padding: 13px 20px;
-  padding-left: 55px;
-  height: 48px;
   width: 100%;
-  font-weight: 500;
-  border-radius: 4px;
-  font-size: 14px;
-  line-height: 22px;
-  letter-spacing: 0.5px;
-  outline: none;
-  color: #c4c3ca;
-  background-color: #1f2029;
-  border: none;
-  -webkit-transition: all 200ms linear;
-  transition: all 200ms linear;
-  box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
 }
-.form-style:focus,
-.form-style:active {
-  border: none;
-  outline: none;
-  box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+
+.forgot {
+  margin-top: -20px;
+  text-align: right;
 }
-.input-icon {
-  position: absolute;
-  top: 0;
-  left: 18px;
- margin-top: 8px;
-  font-size: 18px;
-  line-height: 48px;
-  text-align: left;
-  -webkit-transition: all 200ms linear;
-   transition: all 200ms linear;
-}
-.btn{  
-  border-radius: 4px;
-  height: 44px;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  -webkit-transition : all 200ms linear;
-  transition: all 200ms linear;
-  padding: 0 30px;
-  letter-spacing: 1px;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+
+.outer {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  background-color:white;
-  color: #000000;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
-.btn:hover{  
-  background-color: #000000;
-  color: rgb(185, 55, 55);;
-  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+
+input[type='radio'] {
+  accent-color: rgb(188, 55, 55);
 }
