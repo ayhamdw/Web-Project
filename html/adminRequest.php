@@ -28,16 +28,16 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> 
-              <a href="admin.html" class="nav_logo" style="text-decoration: none;"> 
+              <a href="admin.php" class="nav_logo" style="text-decoration: none;"> 
                 <i class="fa-solid fa-droplet" style="color: #ffffff; font-size: 25px;"></i>
                 <span class="nav_logo-name">Admin Page</span> 
               </a>
                 <div class="nav_list"> 
-                  <a href="admin.html" class="nav_link"> 
+                  <a href="admin.php" class="nav_link"> 
                     <i class="fa-solid fa-house" style="color: #ffffff;"></i>
                     <span class="nav_name">Home</span> 
                   </a> 
-                  <a href="adminPatient.html" class="nav_link"> 
+                  <a href="adminPatient.php" class="nav_link"> 
                     <i class="fa-solid fa-hospital-user" style="color: #ffffff;"></i>
                     <span class="nav_name">Patient</span> 
                   </a> 
@@ -47,7 +47,7 @@
                   </a> <a href="adminRequest.html" class="nav_link active"> 
                     <i class="fa-solid fa-code-pull-request" style="color: #ffffff;"></i> 
                     <span class="nav_name">Request</span> </a> 
-                    <a href="adminProfile.html" class="nav_link"> 
+                    <a href="adminProfile.php" class="nav_link"> 
                       <i class="fa-regular fa-user" style="color: #ffffff;"></i>
                       <span class="nav_name">Profile</span> 
                     </a> <a href="" class="nav_link"> 
