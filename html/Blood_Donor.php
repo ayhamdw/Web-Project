@@ -12,10 +12,7 @@
         }catch(Exception $e){
 
         }
-
     }
-
-
 ?>
 
 
@@ -113,15 +110,15 @@
                     <div class="intro p-20 d-flex space-between bg-eee">
                         <div>
                             <h2 class="m-0">مرحبا</h2>
-                            <p class="cp-gray mt-5 mr-10">شريف</p>
+                            <p class="cp-gray mt-5 mr-10">X اسم المستخدم X</p>
                         </div>
                         <img class="hide-mobile" src="../imgs/p11.png" alt="">
                     </div>
                     <img src="../imgs/avatar.png" alt="" class="avatar">
                     <div class="body txt-c d-flex p-20 mt-20 mb-20 ">
-                        <div>شريف موافي <span class="d-block c-gray fs-14 mt-10 block-mobile">مطور </span></div>
-                        <div>80 <span class="d-block c-gray fs-14 mt-10">المشاريع </span></div>
-                        <div>$8450 <span class="d-block c-gray fs-14 mt-10">الارباح</span></div>
+                        <div>X اسم المستخدم X<span class="d-block c-gray fs-14 mt-10 block-mobile"></span></div>
+                        <div>عدد مرات التبرع<span class="d-block c-gray fs-14 mt-10">X الرقم X</span></div>
+                        <div>العمر<span class="d-block c-gray fs-14 mt-10">X العمر X</span></div>
                     </div>
                     <a href="profile.html" class="visit d-block fs-14 rad-6 bg-blue c-white w-fit btn-shape">زيارة الحساب</a>
                 </div>
