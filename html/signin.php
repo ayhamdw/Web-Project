@@ -2,77 +2,108 @@
 if (isset($_POST['usernameUp']) && isset($_POST['passwordUp'])) {
   $username = $_POST['usernameUp'];
   $password = $_POST['passwordUp'];
-  $hashPassword = sha1($password);
   $flag = 0; // 1 for donar, 2 for patient , 3 for admin
 
-    $conn = mysqli_connect("localhost", "root", "", "web_project");
+  try{
+    $db = new mysqli("localhost", "root", "", "web_project");
+    $qryStr = "select * from donars "; 
+    $res = $db->query($qryStr);
+    for($i=0; $i<$res->num_rows;$i++){
+      $row = $res->fetch_object();
+      if($row->UserName == $username && sha1($password)==$row->Password)
+      {
+        $flag=1;
+        header('Location: Blood_Donor.php');
+      }
+      else
+      {
+        echo "<script>alert('Wrong Password')</script>";
+      }
+    }
+  
+  }
+  catch(Exception $e){
+
+  }
+
+
+  // $hashPassword = sha1($password);
+
+  //   $conn = mysqli_connect("localhost", "root", "", "web_project");
 
     // Use prepared statements to prevent SQL injection
-    $sqlQuery = "SELECT `UserName`, `Password` FROM `donars` WHERE `UserName` = ?";
-    $stmt = mysqli_prepare($conn, $sqlQuery);
+    // $sqlQuery = "SELECT `UserName`, `Password` FROM `donars` WHERE `UserName` = ?";
+    // $stmt = mysqli_prepare($conn, $sqlQuery);
 
-    mysqli_stmt_bind_param($stmt, "s", $username );
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_store_result($stmt);
-    $rowCount = mysqli_stmt_num_rows($stmt);
+    // mysqli_stmt_bind_param($stmt, "s", $username );
+    // mysqli_stmt_execute($stmt);
+    // mysqli_stmt_store_result($stmt);
+    // $rowCount = mysqli_stmt_num_rows($stmt);
 
-    if ($rowCount > 0) {
-        // Fetch the password hash from the database
-        mysqli_stmt_bind_result($stmt, $dbUsername, $dbPassword);
-        mysqli_stmt_fetch($stmt);
+    // if ($rowCount > 0) {
+    //     // Fetch the password hash from the database
+    //     mysqli_stmt_bind_result($stmt, $dbUsername, $dbPassword);
+    //     mysqli_stmt_fetch($stmt);
 
-        // Verify the password
-        if ($hashPassword == $dbPassword) {
-          // Password is correct, proceed to the next page (admin.php)
-          $flag = 1; // donar
-      } else {
-          echo "<script>alert('Wrong Password')</script>";
-      }
-    } else {
-    $sqlQuery = "SELECT `UserName`, `Password` FROM `patients` WHERE `UserName` = ?";
-    $stmt = mysqli_prepare($conn, $sqlQuery);
+    //     // Verify the password
+    //     for($i=0 ; $i<$rowCount; $i++){
+    //       if ($hashPassword == $dbPassword) {
+    //         // Password is correct, proceed to the next page (admin.php)
+    //         $flag = 1; // donar
+    //       } 
+    //       else {
+    //         echo "<script>alert('Wrong Password')</script>";
+    //       }
 
-    mysqli_stmt_bind_param($stmt, "s", $username );
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_store_result($stmt);
-    $rowCount = mysqli_stmt_num_rows($stmt);
-    if ($rowCount > 0) {
-      // Fetch the password hash from the database
-      mysqli_stmt_bind_result($stmt, $dbUsername, $dbPassword);
-      mysqli_stmt_fetch($stmt);
+    //     }
 
-      // Verify the password
-      if ($hashPassword == $dbPassword) {
-        // Password is correct, proceed to the next page (admin.php)
-        $flag = 2; // donar
-    } else {
-        echo "<script>alert('Wrong Password')</script>";
-    }
-  } else {
-    $sqlQuery = "SELECT `UserName`, `Password` FROM `admin` WHERE `UserName` = ?";
-    $stmt = mysqli_prepare($conn, $sqlQuery);
+        
+    // } 
+  //   else {
+  //   $sqlQuery = "SELECT `UserName`, `Password` FROM `patients` WHERE `UserName` = ?";
+  //   $stmt = mysqli_prepare($conn, $sqlQuery);
 
-    mysqli_stmt_bind_param($stmt, "s", $username );
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_store_result($stmt);
-    $rowCount = mysqli_stmt_num_rows($stmt);
-    if ($rowCount > 0) {
-      // Fetch the password hash from the database
-      mysqli_stmt_bind_result($stmt, $dbUsername, $dbPassword);
-      mysqli_stmt_fetch($stmt);
+  //   mysqli_stmt_bind_param($stmt, "s", $username );
+  //   mysqli_stmt_execute($stmt);
+  //   mysqli_stmt_store_result($stmt);
+  //   $rowCount = mysqli_stmt_num_rows($stmt);
+  //   if ($rowCount > 0) {
+  //     // Fetch the password hash from the database
+  //     mysqli_stmt_bind_result($stmt, $dbUsername, $dbPassword);
+  //     mysqli_stmt_fetch($stmt);
 
-      // Verify the password
-      if ($hashPassword == $dbPassword) {
-        // Password is correct, proceed to the next page (admin.php)
-        $flag = 3; // admin
-    } else {
-        echo "<script>alert('Wrong Password')</script>";
-    }
-  } else {
-    echo "<script>alert('Try Again')</script>";
-  }
-  }
-    }
+  //     // Verify the password
+  //     if ($hashPassword == $dbPassword) {
+  //       // Password is correct, proceed to the next page (admin.php)
+  //       $flag = 2; // donar
+  //   } else {
+  //       echo "<script>alert('Wrong Password')</script>";
+  //   }
+  // } else {
+  //   $sqlQuery = "SELECT `UserName`, `Password` FROM `admin` WHERE `UserName` = ?";
+  //   $stmt = mysqli_prepare($conn, $sqlQuery);
+
+  //   mysqli_stmt_bind_param($stmt, "s", $username );
+  //   mysqli_stmt_execute($stmt);
+  //   mysqli_stmt_store_result($stmt);
+  //   $rowCount = mysqli_stmt_num_rows($stmt);
+  //   if ($rowCount > 0) {
+  //     // Fetch the password hash from the database
+  //     mysqli_stmt_bind_result($stmt, $dbUsername, $dbPassword);
+  //     mysqli_stmt_fetch($stmt);
+
+  //     // Verify the password
+  //     if ($hashPassword == $dbPassword) {
+  //       // Password is correct, proceed to the next page (admin.php)
+  //       $flag = 3; // admin
+  //   } else {
+  //       echo "<script>alert('Wrong Password')</script>";
+  //   }
+  // } else {
+  //   echo "<script>alert('Try Again')</script>";
+  // }
+  // }
+  //   }
 
     if ($flag == 1) {
       // $username
@@ -247,7 +278,7 @@ if (isset($_POST['firstName'])) {
               <input type="radio" name ="type" value="Patient" style="border: 0px; width: 50%; height: 1.5em;">
             </div>
           </div>
-          <button type="submit" class="button button-block" id = "submitButton" />Sign Up</button>
+          <button type="submit" class="button button-block" id = "submitButton">Sign Up</button>
         </form>
       </div>
       <div id="login">
