@@ -41,10 +41,10 @@
                     <i class="fa-solid fa-hospital-user" style="color: #ffffff;"></i>
                     <span class="nav_name">Patient</span> 
                   </a> 
-                  <a href="admainDonar.html" class="nav_link"> 
+                  <a href="adminDonar.php" class="nav_link"> 
                     <i class="fa-solid fa-hand-holding-medical" style="color: #ffffff;"></i> 
                     <span class="nav_name">Donar</span> 
-                  </a> <a href="adminRequest.html" class="nav_link active"> 
+                  </a> <a href="adminRequest.php" class="nav_link active"> 
                     <i class="fa-solid fa-code-pull-request" style="color: #ffffff;"></i> 
                     <span class="nav_name">Request</span> </a> 
                     <a href="adminProfile.php" class="nav_link"> 
