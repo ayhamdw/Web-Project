@@ -1,3 +1,19 @@
+<?php
+$conn = new mysqli("localhost", "root" , "", "web_project");
+$sqlQuery = " SELECT * FROM `patientreq`";
+$result = mysqli_query($conn , $sqlQuery);
+$get = mysqli_fetch_assoc($result);
+
+    $req_id =$get["number_reg"];
+    $btype = $get["blood_type"];
+    $number_of_unit =$get["number_of_unit"];
+    $status = $get["accept_status"];
+    
+    
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -27,32 +43,45 @@
         </div>
       </nav>
 <!--TABLE-->
-    <div class="registry_section">
+<form action="total_req.php" method="post">
+<div class="registry_section">
         
         <div class="registry_Transfer_table">
           <table >
             <thead >
             <tr">
-              <td>رقم الطلب</td>
-              <td>فئة الدم</td>
-              <td>عدد الوحدات</td>
-              <td>حالة الطلب</td>
+              <td name="number_reg">رقم الطلب</td>
+              <td name="blood_type">فئة الدم</td>
+              <td name="number_of_unit">عدد الوحدات</td>
+              <td name="accept_status">حالة الطلب</td>
             </tr>
       </thead>
       
       <tbody>
+      <?php
+                      $conn = new mysqli("localhost", "root" , "", "web_project");
+                      $sqlQuery = " SELECT * FROM `patientreq` ";
+                      $result = mysqli_query($conn , $sqlQuery);
+                      while ($get = mysqli_fetch_assoc($result)) {
+                     
+                     ?> 
         <tr class="elm1">
-          <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          <td name="number_reg"> <?php echo $get["number_reg"];?></td>
+            <td name="blood_type"> <?php echo $get["blood_type"];?></td>
+            <td name="number_of_unit"> <?php echo $get["number_of_unit"];?></td>
+            <td name="accept_status"> <?php echo $get["accept_status"];?></td>
         </tr>
        
+        <?php
+                      }
+                    ?>
         
       </tbody>
       </table>
         </div>
-
+</form>
+    
+                    
         <!--footer-->
 
 
