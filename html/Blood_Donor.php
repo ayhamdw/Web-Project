@@ -1,4 +1,25 @@
-S<!DOCTYPE html>
+<?php
+    if(isset($_POST['phoneNumber']) && isset($_POST['DonorNmae']) ){
+        $pNumber=$_POST['phoneNumber'];
+        $dName = $_POST['DonorNmae'];
+        $bType = $_POST['BloodType'];
+        try{
+            $db =new mysqli("localhost", "root" , "", "web_project");
+            $qryStr =" INSERT INTO `donorreq`(`DName`, `BType`, `PHNumber`) VALUES ('$dName','$bType','$pNumber') ";
+            $db->query($qryStr);
+            $db->commit();
+            $db->close();  
+        }catch(Exception $e){
+
+        }
+
+    }
+
+
+?>
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +36,9 @@ S<!DOCTYPE html>
     <script>
         function solid(){
             document.getElementById('SNot').className="fa-solid fa-bell";
-
+            
+        }
+    
         function normal(){
             document.getElementById('SNot').className="fa-regular fa-bell";
         }
@@ -90,18 +113,30 @@ S<!DOCTYPE html>
                     <div class="intro p-20 d-flex space-between bg-eee">
                         <div>
                             <h2 class="m-0">مرحبا</h2>
-
+                            <p class="cp-gray mt-5 mr-10">شريف</p>
                         </div>
                         <img class="hide-mobile" src="../imgs/p11.png" alt="">
                     </div>
                     <img src="../imgs/avatar.png" alt="" class="avatar">
                     <div class="body txt-c d-flex p-20 mt-20 mb-20 ">
-
+                        <div>شريف موافي <span class="d-block c-gray fs-14 mt-10 block-mobile">مطور </span></div>
+                        <div>80 <span class="d-block c-gray fs-14 mt-10">المشاريع </span></div>
+                        <div>$8450 <span class="d-block c-gray fs-14 mt-10">الارباح</span></div>
                     </div>
                     <a href="profile.html" class="visit d-block fs-14 rad-6 bg-blue c-white w-fit btn-shape">زيارة الحساب</a>
                 </div>
                 <!-- Start Request Donation -->
-
+                
+                <div class="quick-draft p-20 bg-white rad-10 ">
+                    <h2 class="mt-0 mb-10 ">تقديم طلب تبرع</h2>
+                    <p class="confirm mt-0 mb-20 c-gray fs-15">الرجاء التأكد من جميع البيانات قبل التأكيد</p>
+                    <form action="Blood_Donor.php" method="post" >
+                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="DonorNmae" placeholder="الإسم بالكامل">
+                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="BloodType" placeholder="نوع الدم ( اختياري )">
+                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="number" name="phoneNumber" placeholder="رقم الهاتف">
+                        
+                        <!-- <textarea class=" d-block mb-20 w-full p-10 b-none bg-eee rad-6" placeholder="Your Though"></textarea> -->
+                        <input class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape" method="post" type="submit" value="تأكيد الطلب">
                     </form>    
                 </div>
                 <!-- End Request Donation -->
@@ -205,4 +240,4 @@ S<!DOCTYPE html>
     </div>
 
 </body>
-
+</html>
