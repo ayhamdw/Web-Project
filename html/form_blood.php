@@ -2,9 +2,9 @@
 if (isset($_POST["blood_type"])) {
   $btype = $_POST["blood_type"];
   $number_of_unit = $_POST["number_of_unit"];
-  $IDnumber = $_POST["ID_number"];
+  $idnumber = $_POST["number_id"];
   $result = "";
-      $sqlQuery = "INSERT INTO `patientreq`(`فئة الدم`, `عدد الوحدات`, `رقم الهوية`) VALUES ('$IDnumber','$number_of_unit',' $btype')";
+      $sqlQuery = "INSERT INTO `patientreq`(`blood_type`,`number_of_unit`,`number_id`) VALUES ('$btype','$number_of_unit','$idnumber')";
       $conn = new mysqli("localhost", "root" ,"", "web_project");
       $conn->query($sqlQuery);
       $sqlQuery = "SELECT * FROM `patientreq`";
@@ -43,18 +43,18 @@ if (isset($_POST["blood_type"])) {
 <div class="container d-flex justify-content-center ">
                 <div class="card">
                     <a class="singup">اطلب دم</a>
-                    <div class="inputBox1">
-                        <input type="text"  name=" blood_type" required="required">
+                    <div class="inputBox">
+                        <input type="text"  name="blood_type" required="required">
                         <span >فئة الدم</span>
                     </div>
         
                     <div class="inputBox">
-                        <input type="text" name=" number_of_unit" required="required">
+                        <input type="text" name="number_of_unit" required="required">
                         <span>عدد الوحدات</span>
                     </div>
         
                     <div class="inputBox">
-                        <input type="password"  name="ID_number" required="required">
+                        <input type="text"  name="number_id" required="required">
                        <span> رقم الهوية</span>
                     </div>
         
