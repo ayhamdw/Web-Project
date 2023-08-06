@@ -2,17 +2,15 @@
 if (isset($_POST["blood_type"])) {
   $btype = $_POST["blood_type"];
   $number_of_unit = $_POST["number_of_unit"];
-  $pnumber = $_POST["phone_number"];
+  $IDnumber = $_POST["ID_number"];
   $result = "";
-      $sqlQuery = "INSERT INTO `patientreq`(`blood_type`, `number_of_unit`, `phone_number`) VALUES ('$btype','$number_of_unit','$pnumber')";
+      $sqlQuery = "INSERT INTO `patientreq`(`فئة الدم`, `عدد الوحدات`, `رقم الهوية`) VALUES ('$IDnumber','$number_of_unit',' $btype')";
       $conn = new mysqli("localhost", "root" ,"", "web_project");
       $conn->query($sqlQuery);
       $sqlQuery = "SELECT * FROM `patientreq`";
       $result = $conn->query($sqlQuery);              
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -41,22 +39,23 @@ if (isset($_POST["blood_type"])) {
               </div>
             </nav>
 <!-- form-->
-            <div class="container d-flex justify-content-center ">
+<form action="form_blood.php" method="post">
+<div class="container d-flex justify-content-center ">
                 <div class="card">
                     <a class="singup">اطلب دم</a>
                     <div class="inputBox1">
-                        <input type="text" required="required">
-                        <span class="user">فئة الدم</span>
+                        <input type="text"  name=" blood_type" required="required">
+                        <span >فئة الدم</span>
                     </div>
         
                     <div class="inputBox">
-                        <input type="text" required="required">
+                        <input type="text" name=" number_of_unit" required="required">
                         <span>عدد الوحدات</span>
                     </div>
         
                     <div class="inputBox">
-                        <input type="password" required="required">
-                        <span>رقم الهاتف</span>
+                        <input type="password"  name="ID_number" required="required">
+                       <span> رقم الهوية</span>
                     </div>
         
                   <!--button sumbit-->
@@ -81,6 +80,8 @@ if (isset($_POST["blood_type"])) {
                 </script>
                 </div>
             </div>
+</form>
+            
             <div class="footer">
                 <div class="container_footer">
                     <img src="/imgs/logo.png" alt="">
