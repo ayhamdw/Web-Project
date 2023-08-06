@@ -25,18 +25,21 @@
       <div class="container-fluid">
       
         <!-- form-->
-
+        <a href="form_blood.php" class="btn btn-dark">اطلب دم</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        
+       
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+       
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
+            
               <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <!--Dropdown-->  
               المريض
               </button>
+              
               <ul class="dropdown-menu dropdown-menu-dark">
                 <li><a class="dropdown-item" href="../html/MainPage.html"> الرئيسية </a></li>
                 <li><a class="dropdown-item" href="../html/Requests_page.html"> الطلبات </a></li>
@@ -126,8 +129,8 @@
           <h3>اجراءات نقل دم</h3>
           <p>نقل الدم (Transfusion) هو عملية نقل أو إعطاء الدم أو مكوناته من شخص إلى شخص آخر.إليك بعض الإجراءات الأساسية المتبعة في عملية نقل الدم
           </p>
-
-            <i class="fa-solid fa-arrow-left"></i>
+<a href="">تعرف عليها</a>
+            <i class="fa-solid fa-arrow-left"> </i>
           </a>
         
         </div>
