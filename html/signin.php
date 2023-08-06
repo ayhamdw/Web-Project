@@ -228,7 +228,7 @@ if (isset($_POST['firstName'])) {
         <form method="POST" id= "formId" action="signin.php">
           <div class="top-row">
             <div class="field-wrap">
-              <input type="text" id= "FirstName" name = "firstName" required placeholder="First Name" style="max-width:250px;" />
+              <input type="text" id= "FirstName" name = "firstName" required placeholder="First Name" />
             </div>
             <div class="field-wrap">
               <input type="text" id= "SecondName" name = "secondName" required placeholder="Last Name" />
