@@ -32,7 +32,7 @@
             <h3 class=" txt-c mt-0">المتبرع</h3>
             <ul>
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/Blood_Donor.html">
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/Blood_Donor.php">
                         
                         <i class="fa-solid fa-suitcase-medical"></i>
                         <span class="hide-mobile">تبرع الآن</span>
@@ -185,7 +185,7 @@
 
     <div class="footer">
         <div class="container">
-            <img src="/imgs/logo.png" alt="">
+            <img src="../imgs/logo.png" alt="">
 
             <p>مركز <span>قدس</span> للتبرع بالدم</p>
             <div class="social-icons">
