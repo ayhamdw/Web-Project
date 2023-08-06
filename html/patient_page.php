@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -24,7 +25,7 @@
       <div class="container-fluid">
       
         <!-- form-->
-        <a class="navbar-brand" href="#"> اطلب دم </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -88,33 +89,21 @@
          <div class="row">
   <div class="col-sm-6">
   <p class="m-b-10 f-w-600">البريد الاكتروني</p>
-  <h6 class="text-muted f-w-400">patient1@gmail.com</h6>
-  </div>
-  <div class="col-sm-6">
-  <p class="m-b-10 f-w-600">رقم الهاتف</p>
-  <h6 class="text-muted f-w-400">0593651317</h6>
+
   </div>
   </div>
   <br>
   <div class="row">
   <div class="col-sm-6">
   <p class="m-b-10 f-w-600">العمر</p>
-  <h6 class="text-muted f-w-400">20</h6>
-  </div>
-  <div class="col-sm-6">
-  <p class="m-b-10 f-w-600">العنوان</p>
-  <h6 class="text-muted f-w-400">نابلس </h6>
+
   </div>
    </div>
    <br>
    <div class="row">
     <div class="col-sm-6">
     <p class="m-b-10 f-w-600">فئة الدم</p>
-    <h6 class="text-muted f-w-400">B+</h6>
-    </div>
-    <div class="col-sm-6">
-    <p class="m-b-10 f-w-600">نسبة الدم</p>
-    <h6 class="text-muted f-w-400">12</h6>
+
     </div>
      </div>
   
@@ -137,7 +126,7 @@
           <h3>اجراءات نقل دم</h3>
           <p>نقل الدم (Transfusion) هو عملية نقل أو إعطاء الدم أو مكوناته من شخص إلى شخص آخر.إليك بعض الإجراءات الأساسية المتبعة في عملية نقل الدم
           </p>
-          <a  class="card-icon" href="#"> تعرف عليها 
+
             <i class="fa-solid fa-arrow-left"></i>
           </a>
         
