@@ -81,9 +81,8 @@ $("#formId").submit(function (e) {
 window.onload = function () {
   const btnClicked = document.getElementById("submitButton");
   btnClicked.onclick = function () {
-    const userName = document.getElementById("FirstName").value;
-    const password = document.getElementById("SecondName").value;
-
+    const userName = document.getElementById("usernameUp").value;
+    const password = document.getElementById("passwordUp").value;
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
@@ -95,8 +94,9 @@ window.onload = function () {
         }
       }
     };
-    const params = `userName=${userName}&password=${password}`;
-    xhr.open("POST", "../html/signin.php?" + params);
-    xhr.send(null);
+    const params = `usernameUp=${userName}&passwordUp=${password}`;
+    xhr.open("POST", "signin.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send(params);
   };
 };

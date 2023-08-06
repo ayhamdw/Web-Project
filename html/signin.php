@@ -1,22 +1,15 @@
 <?php
-if (isset($_POST['username']) && isset($_POST['password'])) {
-    $username = $_POST['userName'];
-    $password = $_POST['password'];
-    echo $username;
+if (isset($_POST['usernameUp']) && isset($_POST['passwordUp'])) {
+  $username = $_POST['usernameUp'];
+  $password = $_POST['passwordUp'];
+  $hashPassword = sha1($password);
+  $flag = 0; // 1 for donar, 2 for patient , 3 for admin
 
     $conn = mysqli_connect("localhost", "root", "", "web_project");
-
-    if (!$conn) {
-        die("Database connection failed: " . mysqli_connect_error());
-    }
 
     // Use prepared statements to prevent SQL injection
     $sqlQuery = "SELECT `UserName`, `Password` FROM `donars` WHERE `UserName` = ?";
     $stmt = mysqli_prepare($conn, $sqlQuery);
-
-    if (!$stmt) {
-        die("Prepared statement preparation failed: " . mysqli_error($conn));
-    }
 
     mysqli_stmt_bind_param($stmt, "s", $username );
     mysqli_stmt_execute($stmt);
@@ -24,30 +17,87 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $rowCount = mysqli_stmt_num_rows($stmt);
 
     if ($rowCount > 0) {
-      exit();
         // Fetch the password hash from the database
         mysqli_stmt_bind_result($stmt, $dbUsername, $dbPassword);
         mysqli_stmt_fetch($stmt);
 
         // Verify the password
-        if (password_verify($password, $dbPassword)) {
-            // Password is correct, proceed to the next page
-            echo "Success";
-            header("Location: Blood_Donor.php");
-            exit();
-
-             // Use exit instead of die to terminate the script
-        } else {
-            echo "Incorrect password.";
-        }
+        if ($hashPassword == $dbPassword) {
+          // Password is correct, proceed to the next page (admin.php)
+          $flag = 1; // donar
+      } else {
+          echo "<script>alert('Wrong Password')</script>";
+      }
     } else {
-        echo "User not found.";
+    $sqlQuery = "SELECT `UserName`, `Password` FROM `patients` WHERE `UserName` = ?";
+    $stmt = mysqli_prepare($conn, $sqlQuery);
+
+    mysqli_stmt_bind_param($stmt, "s", $username );
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+    $rowCount = mysqli_stmt_num_rows($stmt);
+    if ($rowCount > 0) {
+      // Fetch the password hash from the database
+      mysqli_stmt_bind_result($stmt, $dbUsername, $dbPassword);
+      mysqli_stmt_fetch($stmt);
+
+      // Verify the password
+      if ($hashPassword == $dbPassword) {
+        // Password is correct, proceed to the next page (admin.php)
+        $flag = 2; // donar
+    } else {
+        echo "<script>alert('Wrong Password')</script>";
+    }
+  } else {
+    $sqlQuery = "SELECT `UserName`, `Password` FROM `admin` WHERE `UserName` = ?";
+    $stmt = mysqli_prepare($conn, $sqlQuery);
+
+    mysqli_stmt_bind_param($stmt, "s", $username );
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+    $rowCount = mysqli_stmt_num_rows($stmt);
+    if ($rowCount > 0) {
+      // Fetch the password hash from the database
+      mysqli_stmt_bind_result($stmt, $dbUsername, $dbPassword);
+      mysqli_stmt_fetch($stmt);
+
+      // Verify the password
+      if ($hashPassword == $dbPassword) {
+        // Password is correct, proceed to the next page (admin.php)
+        $flag = 3; // admin
+    } else {
+        echo "<script>alert('Wrong Password')</script>";
+    }
+  } else {
+    echo "<script>alert('Try Again')</script>";
+  }
+  }
+    }
+
+    if ($flag == 1) {
+      // $username
+      // $password
+      header("Location: Blood_Donor.php");
+    }
+    elseif ($flag == 2) {
+      // $username
+      // $password
+      header("Location: patient_page.php");
+    }
+    elseif ($flag == 3) {
+      // $username
+      // $password
+      header("Location: admin.php");
+    }
+    else {
+      header("Location: signin.php");
     }
 
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 }
 ?>
+
 <?php
 if (isset($_POST['firstName'])) {
     $type = $_POST['type'];
@@ -121,13 +171,6 @@ if (isset($_POST['firstName'])) {
 }
 ?>
 
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -154,7 +197,7 @@ if (isset($_POST['firstName'])) {
         <form method="POST" id= "formId" action="signin.php">
           <div class="top-row">
             <div class="field-wrap">
-              <input type="text" id= "FirstName" name = "firstName" required placeholder="First Name" />
+              <input type="text" id= "FirstName" name = "firstName" required placeholder="First Name" style="max-width:250px;" />
             </div>
             <div class="field-wrap">
               <input type="text" id= "SecondName" name = "secondName" required placeholder="Last Name" />
@@ -209,14 +252,14 @@ if (isset($_POST['firstName'])) {
       </div>
       <div id="login">
         <h1>Welcome Back!</h1>
-        <form method="POST" id= "formId1" action="signin.php">
+        <form method="POST" id="formId1" action="signin.php">
           <div class="field-wrap">
-          <input type="text" id="usernameUp" name="usernameUp" required placeholder="username" />
+            <input type="text" id="usernameUp" name="usernameUp" required placeholder="username" />
           </div>
           <div class="field-wrap">
-          <input type="password" id="passwordUp" name="passwordUp" required placeholder="Password" />
+            <input type="password" id="passwordUp" name="passwordUp" required placeholder="Password" />
           </div>
-          <button type="submit" class="button button-block" id = "submitButton" />Log In</button>
+          <button type="submit" class="button button-block" id="submitButton">Log In</button>
         </form>
       </div>
     </div>
