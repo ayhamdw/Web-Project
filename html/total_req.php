@@ -11,6 +11,19 @@ $get = mysqli_fetch_assoc($result);
   
 ?>
 
+<?php
+$conn = new mysqli("localhost", "root" ,"", "web_project");
+$sqlQuery = " SELECT * FROM `patientreq`";
+$result = mysqli_query($conn , $sqlQuery);
+$get = mysqli_fetch_assoc($result);
+
+    $req_id =$get["number_reg"];
+    $btype = $get["blood_type"];
+    $number_of_unit =$get["number_of_unit"];
+    $status = $get["accept_status"];
+  
+?>
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
