@@ -5,6 +5,8 @@ $sqlQuery = "SELECT * FROM `patientreq` WHERE accept_status = 'قبول' ";
 $result = mysqli_query($conn, $sqlQuery);
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>

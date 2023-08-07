@@ -1,5 +1,6 @@
+
 <?php
-if (isset($_POST["blood_type"])) {
+if (isset($_POST["phone_number"] )) {
   $btype = $_POST["blood_type"];
   $number_of_unit = $_POST["number_of_unit"];
   $phnumber = $_POST["phone_number"];
@@ -85,13 +86,13 @@ if (isset($_POST["blood_type"])) {
 
                 
 
-               <!-- <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/form_blood.html">
+                <li>
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Requests_page.php">
                         
                         <i class="fa-solid fa-file-signature"></i>
-                        <span class="hide-mobile">اطلب دم</span>
+                        <span class="hide-mobile">الطلبات</span>
                     </a>
-                </li>-->
+                </li>
                 <li>
                     <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/general_information.html">
                         
@@ -142,16 +143,14 @@ if (isset($_POST["blood_type"])) {
                     <form action="Blood_Donor.php" method="post" >
                         <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="blood_type" placeholder="فئة الدم">
                         <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="number_of_unit" placeholder="عدد الوحدات">
-                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="number" name="phone_number" placeholder="رقم الهاتف">
+                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="phone_number" placeholder="رقم الهاتف">
                         
                         <!-- <textarea class=" d-block mb-20 w-full p-10 b-none bg-eee rad-6" placeholder="Your Though"></textarea> -->
                         <input class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape" method="post" type="submit" value="تأكيد الطلب">
                     </form>    
                 </div>
                 <!-- End Request Donation -->
-                </form>
-                
-
+    </form>
             </div>
             <div class="projects p-20 bg-white rad-10 m-20">
                 <h2 class="mt-0 mb-20">أخر التبرعات</h2>
