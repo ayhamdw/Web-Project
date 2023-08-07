@@ -137,6 +137,7 @@
                         <div><b>الإسم</b><span class="d-block c-gray fs-14 mt-10 block-mobile"><?php echo $result['FirstName']." ". $result['SecondName'] ?></span></div>
                         <div><b>رقم الهاتف</b><span class="d-block c-gray fs-14 mt-10"><?php echo $result['PhoneNumber']?></span></div>
                         <div><b>زمرة الدم</b><span class="d-block c-gray fs-14 mt-10"></span><?php echo $result['BloodType']?></div>
+                        <div><b>Username</b><span class="d-block c-gray fs-14 mt-10"></span><?php echo $result['UserName']?></div>
                     </div>
                     <!-- <a href="profile.html" class="visit d-block fs-14 rad-6 bg-blue c-white w-fit btn-shape">زيارة الحساب</a> -->
                 </div>
@@ -155,11 +156,34 @@
                     </form>    
                 </div>
                 <!-- End Request Donation -->
+                <?php
+                // session_start();
+                $un = $_SESSION['$username'];
+                $conn = mysqli_connect("localhost", "root", "", "web_project");
+                $sqlQuery1 = "SELECT *  FROM `donars` ";
+                $stmt1 = mysqli_query($conn, $sqlQuery1);
+                $result1 = mysqli_fetch_assoc($stmt1);
+
+                $sqlQuery2 =  "SELECT * FROM `donars` ORDER BY username DESC LIMIT 1, 1 ";
+                $stmt2 = mysqli_query($conn, $sqlQuery2);
+                $result2 = mysqli_fetch_assoc($stmt2);
+
+                $sqlQuery3 =  "SELECT * FROM `donars` ORDER BY username DESC LIMIT 2, 2 ";
+                $stmt3 = mysqli_query($conn, $sqlQuery3);
+                $result3 = mysqli_fetch_assoc($stmt3);
+                
+                $sqlQuery4 =  "SELECT * FROM `donars` ORDER BY username DESC LIMIT 3, 3 ";
+                $stmt4 = mysqli_query($conn, $sqlQuery4);
+                $result4 = mysqli_fetch_assoc($stmt4);
+
+
+                ?>
 
             </div>
             <div class="projects p-20 bg-white rad-10 m-20">
                 <h2 class="mt-0 mb-20">أخر التبرعات</h2>
                 <div class="responsive-table">
+                    
                     <table class="fs-15 w-full" >
                         <thead>
                             <tr>
@@ -173,7 +197,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>أحمد</td>
+                                <td><?php echo $result1['FirstName']?></td>
                                 <td>10 May 2022</td>
                                 <td>قلقيلية</td>
                                 <td>AB-</td>
@@ -183,7 +207,8 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td>ميساء</td>
+                                
+                                <td><?php echo $result2['FirstName']?></td>
                                 <td>12 Oct 2021</td>
                                 <td>نابلس</td>
                                 <td>O-</td>
@@ -191,7 +216,7 @@
                                 <td><span class="label btn-shape bg-red c-white">فاشلة</span></td>
                               </tr>
                               <tr>
-                                <td>وسن</td>
+                                <td><?php echo $result3['FirstName']?></td>
                                 <td>05 Sep 2021</td>
                                 <td>طولكرم</td>
                                 <td>B+</td>
@@ -199,7 +224,7 @@
                                 <td><span class="label btn-shape bg-green c-white">ناجحة</span></td>
                               </tr>
                               <tr>
-                                <td>أيهم</td>
+                                <td><?php echo $result4['FirstName']?></td>
                                 <td>22 May 2021</td>
                                 <td>طوباس</td>
                                 <td>A-</td>
@@ -232,7 +257,7 @@
 
     <div class="footer">
         <div class="container">
-            <img src="/imgs/logo.png" alt="">
+            <img src="../imgs/logo.png" alt="">
 
             <p>مركز <span>قدس</span> للتبرع بالدم</p>
             <div class="social-icons">

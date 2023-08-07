@@ -28,7 +28,7 @@ if (isset($_POST['FName'])){
     $conn->query($sqlQuery);
   }
   elseif($password!=$confirm) {
-    echo '<script>alert("Welcome to Geeks for Geeks")</script>';
+    echo '<script>alert("Passwords do not match")</script>';
   }
   else {
     $sqlQuery = "UPDATE `admin` SET `FirstName`='$fname',`SecondName`='$secondName',`UserName`='$user',`Email`='$email',`City`='$city',`PhoneNumber`='$phoneNumber' , `password` = '$password'";
