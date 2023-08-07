@@ -1,21 +1,16 @@
+
 <?php
-    if(isset($_POST['phoneNumber']) && isset($_POST['DonorNmae']) ){
-        $pNumber=$_POST['phoneNumber'];
-        $dName = $_POST['DonorNmae'];
-        $bType = $_POST['BloodType'];
-        try{
-            $db =new mysqli("localhost", "root" , "", "web_project");
-            $qryStr =" INSERT INTO `donorreq`(`DName`, `BType`, `PHNumber`) VALUES ('$dName','$bType','$pNumber') ";
-            $db->query($qryStr);
-            $db->commit();
-            $db->close();  
-        }catch(Exception $e){
-
-        }
-
-    }
-
-
+if (isset($_POST["phone_number"] )) {
+  $btype = $_POST["blood_type"];
+  $number_of_unit = $_POST["number_of_unit"];
+  $phnumber = $_POST["phone_number"];
+  $result = "";
+      $sqlQuery = "INSERT INTO `donorreq`(`blood_type`,`number_of_unit`,`phone_number`) VALUES ('$btype','$number_of_unit','$phnumber')";
+      $conn = new mysqli("localhost", "root" ,"", "web_project");
+      $conn->query($sqlQuery);
+      $sqlQuery = "SELECT * FROM `donorreq`";
+      $result = $conn->query($sqlQuery);              
+}
 ?>
 
 
@@ -92,10 +87,10 @@
                 
 
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/form_blood.html">
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Requests_page.php">
                         
                         <i class="fa-solid fa-file-signature"></i>
-                        <span class="hide-mobile">اطلب دم</span>
+                        <span class="hide-mobile">الطلبات</span>
                     </a>
                 </li>
                 <li>
@@ -141,21 +136,21 @@
                     <!-- <a href="profile.html" class="visit d-block fs-14 rad-6 bg-blue c-white w-fit btn-shape">زيارة الحساب</a> -->
                 </div>
                 <!-- Start Request Donation -->
-                
+                <form action="Blood_Donor.php" method="post">
                 <div class="quick-draft p-20 bg-white rad-10 ">
                     <h2 class="mt-0 mb-10 ">تقديم طلب تبرع</h2>
                     <p class="confirm mt-0 mb-20 c-gray fs-15">الرجاء التأكد من جميع البيانات قبل التأكيد</p>
                     <form action="Blood_Donor.php" method="post" >
-                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="DonorNmae" placeholder="الإسم بالكامل">
-                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="BloodType" placeholder="نوع الدم ( اختياري )">
-                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="number" name="phoneNumber" placeholder="رقم الهاتف">
+                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="blood_type" placeholder="فئة الدم">
+                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="number_of_unit" placeholder="عدد الوحدات">
+                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="phone_number" placeholder="رقم الهاتف">
                         
                         <!-- <textarea class=" d-block mb-20 w-full p-10 b-none bg-eee rad-6" placeholder="Your Though"></textarea> -->
                         <input class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape" method="post" type="submit" value="تأكيد الطلب">
                     </form>    
                 </div>
                 <!-- End Request Donation -->
-
+    </form>
             </div>
             <div class="projects p-20 bg-white rad-10 m-20">
                 <h2 class="mt-0 mb-20">أخر التبرعات</h2>

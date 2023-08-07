@@ -2,17 +2,15 @@
 if (isset($_POST["blood_type"])) {
   $btype = $_POST["blood_type"];
   $number_of_unit = $_POST["number_of_unit"];
-  $pnumber = $_POST["phone_number"];
+  $idnumber = $_POST["number_id"];
   $result = "";
-      $sqlQuery = "INSERT INTO `patientreq`(`blood_type`, `number_of_unit`, `phone_number`) VALUES ('$btype','$number_of_unit','$pnumber')";
+      $sqlQuery = "INSERT INTO `patientreq`(`blood_type`,`number_of_unit`,`number_id`) VALUES ('$btype','$number_of_unit','$idnumber')";
       $conn = new mysqli("localhost", "root" ,"", "web_project");
       $conn->query($sqlQuery);
       $sqlQuery = "SELECT * FROM `patientreq`";
       $result = $conn->query($sqlQuery);              
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -40,25 +38,24 @@ if (isset($_POST["blood_type"])) {
                 <a class="navbar-brand" href="#">اطلب دم</a>
               </div>
             </nav>
-            <div class="container d-flex justify-content-center">
 <!-- form-->
-            
-                <form action="form_blood.php" method="post">
+<form action="form_blood.php" method="post">
+<div class="container d-flex justify-content-center ">
                 <div class="card">
                     <a class="singup">اطلب دم</a>
-                    <div class="inputBox1">
-                        <input type="text" name="blood_type" required="required"/>
-                        <span class="blood_type">فئة الدم</span>
+                    <div class="inputBox">
+                        <input type="text"  name="blood_type" required="required">
+                        <span >فئة الدم</span>
                     </div>
         
                     <div class="inputBox">
-                        <input type="text"  name="number_of_unit" required="required"/>
-                        <span class="number_of_unit">عدد الوحدات</span>
+                        <input type="text" name="number_of_unit" required="required">
+                        <span>عدد الوحدات</span>
                     </div>
         
                     <div class="inputBox">
-                        <input type="text"  name="phone_number" required="required"/>
-                        <span class="phone_number">رقم الهاتف</span>
+                        <input type="text"  name="number_id" required="required">
+                       <span> رقم الهوية</span>
                     </div>
         
                   <!--button sumbit-->
@@ -72,7 +69,6 @@ if (isset($_POST["blood_type"])) {
                         </div>
                     </button>
                 </div>
-                
                 <script type="text/javascript">
                     const btn = document.querySelector("#btn");
                     const btnText = document.querySelector("#btnText");
@@ -83,11 +79,9 @@ if (isset($_POST["blood_type"])) {
                     };
                 </script>
                 </div>
+            </div>
+</form>
             
-                </form>
-                </div>
-              
-            <!--footer-->
             <div class="footer">
                 <div class="container_footer">
                     <img src="/imgs/logo.png" alt="">

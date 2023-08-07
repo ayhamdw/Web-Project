@@ -1,276 +1,274 @@
 
-
 .navbar{
-    background-color: #828282;
-  margin-bottom: 50px;
+  background-color: #828282;
+margin-bottom: 50px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Cairo&family=Roboto:wght@100&display=swap');
 
 body{
-  font-family: 'Amiri', serif;
+font-family: 'Amiri', serif;
 }
 
 /* form*/
-
 .singup {
-    color: #000;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: block;
-    font-weight: bold;
-    font-size: x-large;
-    margin-top: 1.5em;
-  }
-  
-  .card {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 350px;
-    width: 300px;
-    flex-direction: column;
-    gap: 35px;
-    border-radius: 15px;
-    background:  rgb(204, 0, 0);
-    box-shadow: 16px 16px 32px #c8c8c8,
-    -16px -16px 32px #fefefe;
-    border-radius: 8px;
-  }
-  
-  .inputBox,
-  .inputBox1 {
-    position: relative;
-    width: 250px;
-  }
-  
-  .inputBox input,
-  .inputBox1 input {
-    width: 100%;
-    padding: 10px;
-    outline: none;
-    border: none;
-    color: #000;
-    font-size: 1em;
-    background: transparent;
-    border-left: 2px solid #000;
-    border-bottom: 2px solid #000;
-    transition: 0.1s;
-    border-bottom-left-radius: 8px;
-  }
-  
-  .inputBox span,
-  .inputBox span {
-    margin-top: 5px;
-    position: absolute;
-    left: 0;
-    transform: translateY(-4px);
-    margin-left: 10px;
-    padding: 10px;
-    pointer-events: none;
-    font-size: 12px;
-    color: #000;
-    text-transform: uppercase;
-    transition: 0.5s;
-    letter-spacing: 3px;
-    border-radius: 8px;
-  }
-  
-  .inputBox input:valid~span,
-  .inputBox input:focus~span {
-    transform: translateX(113px) translateY(-15px);
-    font-size: 0.8em;
-    padding: 5px 10px;
-    background: #000;
-    letter-spacing: 0.2em;
-    color: #000;
-    border: 2px;
-  }
-  
-  .inputBox1 input:valid~span,
-  .inputBox1 input:focus~span {
-    transform: translateX(156px) translateY(-15px);
-    font-size: 0.8em;
-    padding: 5px 10px;
-    background: #000;
-    letter-spacing: 0.2em;
-    color: #000;
-    border: 2px;
-  }
-  
-  .inputBox input:valid,
-  .inputBox input:focus,
-  .inputBox1 input:valid,
-  .inputBox1 input:focus {
-    border: 2px solid #000;
-    border-radius: 8px;
-  }
-  
-  /*button sumbit*/
-  
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  font-weight: bold;
+  font-size: x-large;
+  margin-top: 1.5em;
+}
+
+.card {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+  width: 300px;
+  flex-direction: column;
+  gap: 35px;
+  border-radius: 15px;
+  background:  rgb(204, 0, 0);
+  box-shadow: 16px 16px 32px #c8c8c8,
+  -16px -16px 32px #fefefe;
+  border-radius: 8px;
+}
+
+.inputBox,
+.inputBox {
+  position: relative;
+  width: 250px;
+}
+
+.inputBox input,
+.inputBox input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 8px;
+}
+
+.inputBox span,
+.inputBox span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-4px);
+  margin-left: 10px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 3px;
+  border-radius: 8px;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+  transform: translateX(113px) translateY(-15px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #000;
+  letter-spacing: 0.2em;
+  color: #fff;
+  border: 2px;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+  transform: translateX(156px) translateY(-15px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #000;
+  letter-spacing: 0.2em;
+  color: #fff;
+  border: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus,
+.inputBox input:valid,
+.inputBox input:focus {
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+/*button sumbit*/
+
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
 }
 
 .container{
-    width: 100%;
-    background: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button{
-    width: 500px;
-   margin-top: 20px;
-   margin-bottom: 10px;
-    border: none;
-    outline: none;
-    background: #2f2f2f;
-    color: #000;
-    font-size: 22px;
-    border-radius: 40px;
-    text-align: center;
-    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
+  width: 500px;
+ margin-top: 20px;
+ margin-bottom: 10px;
+  border: none;
+  outline: none;
+  background: #2f2f2f;
+  color: #fff;
+  font-size: 22px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .check-box{
-    width: 80px;
-    height: 50px;
-    border-radius: 40px;
-    box-shadow: 0 0 12px -2px rgba(0,0,0,0.5);
-    position: absolute;
-    top: 0;
-    opacity: 0;
+  width: 80px;
+  height: 50px;
+  border-radius: 40px;
+  box-shadow: 0 0 12px -2px rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  opacity: 0;
 }
 
 .check-box svg{
-    width: 40px;
- 
-    margin-top: 3px;
+  width: 40px;
+
+  margin-top: 3px;
 }
 
 svg path{
-    stroke-width: 3;
-    
-    stroke: #eee;
-    stroke-dashoffset: 34;
-    stroke-linecap: round;
+  stroke-width: 3;
+  
+  stroke: #eee;
+  stroke-dashoffset: 34;
+  stroke-linecap: round;
 }
 
 .active{
-    background: #cc0000;
-    stroke-dasharray: 34;
-    transition: 10s;
+  background: #cc0000;
+  stroke-dasharray: 34;
+  transition: 1s;
 }
 
 .active .check-box{
-    right: 0;
-    opacity: 1;
-    transition: 10s;
+  right: 0;
+  opacity: 1;
+  transition: 1s;
 }
 
 .active p{
-    margin-right: 125px;
-   
-    transition: 10s;
+  margin-right: 125px;
+ 
+  transition: 1s;
 }
 
 .active svg path{
-    stroke-dashoffset: 0;
-    transition: 10s;
-    transition-delay: 20s;
+  stroke-dashoffset: 0;
+  transition: 1s;
+  transition-delay: 1s;
 }
 .container #btn #btnText{
-  height: 30px;
+height: 30px;
 }
 /* Footer */
 .footer{
-  padding-top: 0px;
-  padding-bottom: 2px;
-  background-color: #5a5a5a;
-  position: relative;
-  color: white;
-  text-align: center;
-  /* margin-right: 200px; */
-  /* margin-top:300px; */
-  /* height: 800px; */
-  box-shadow:-5px -2px 5px #5a5a5a;
-  direction: rtl;
+padding-top: 0px;
+padding-bottom: 2px;
+background-color: #5a5a5a;
+position: relative;
+color: white;
+text-align: center;
+/* margin-right: 200px; */
+/* margin-top:300px; */
+/* height: 800px; */
+box-shadow:-5px -2px 5px #5a5a5a;
+direction: rtl;
 }
 .footer::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  top:0;
-  width:100%;
-  height:100%;
-  background-color: #828282;
-  
+content: "";
+position: absolute;
+left: 0;
+top:0;
+width:100%;
+height:100%;
+background-color: #828282;
+
 
 }
 .footer .container_footer
 {
-  position: relative;
+position: relative;
 
 }
 .footer img{
-  padding-top: 12px;
-  margin-bottom: -27px;
-  width: 150px;
+padding-top: 12px;
+margin-bottom: -27px;
+width: 150px;
 }
 
 .footer p:not(.copyright){
-  text-transform: uppercase;
-  padding:20px;
-  border-bottom: 1px solid white;
-  font-size: 22px;
-  width: fit-content;
-  margin:20px auto;
+text-transform: uppercase;
+padding:20px;
+border-bottom: 1px solid white;
+font-size: 22px;
+width: fit-content;
+margin:20px auto;
 }
 .footer p:not(.copyright) span{
-  color: var(--main-color);
+color: var(--main-color);
 }
 
 
 .footer .social-icons i {
-  padding: 10px 40px;
-  
-  color: #ffffff;
+padding: 10px 40px;
+
+color: #ffffff;
 }
 .footer .social-icons  .fa-facebook:hover {
-  color: #0d69d5;
+color: #0d69d5;
 }
 .footer .social-icons  .fa-twitter:hover {
-  color: 	#1DA1F2;
+color: 	#1DA1F2;
 }.footer .social-icons  .fa-instagram:hover {
-  color: #E4405F;
+color: #E4405F;
 }.footer .social-icons  .fa-youtube:hover {
-  color: #CD201F;
+color: #CD201F;
 }
 
 
 .footer .copyright{
-  margin-top: 60px;
+margin-top: 60px;
 }
 .footer .copyright span{
-  font-weight: bold;
-  color: var(--main-color);
+font-weight: bold;
+color: var(--main-color);
 }
 
 @media(max-width:767px)
 {
-  .footer .social-icons i {
-      padding: 10px 30px;
-      color: #ffffff;
-  }
+.footer .social-icons i {
+    padding: 10px 30px;
+    color: #ffffff;
+}
 }

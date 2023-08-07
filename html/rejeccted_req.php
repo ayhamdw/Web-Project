@@ -1,3 +1,11 @@
+<?php
+$conn = new mysqli("localhost", "root", "", "web_project");
+$sqlQuery = "SELECT * FROM `patientreq` WHERE accept_status ='رفض' ";
+$result = mysqli_query($conn, $sqlQuery);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -12,10 +20,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Open+Sans:wght@300&family=Reem+Kufi+Fun:wght@400;500&family=Scheherazade+New:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!--Main Css File-->
-    <link rel="stylesheet" href="../css/total_req.css">
+    <link rel="stylesheet" href="../css/rejected_req.css">
     <!--Icon Tab Link -->
     <link rel="icon" href="../imgs/icon tab3.jpg"/>
-    <title>Total Request</title>
+    <title>Rejected Request</title>
 </head>
 <body>
 
@@ -23,7 +31,7 @@
     <!--NAV-->
     <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">اجمالي الطلبات</a>
+          <a class="navbar-brand" href="#">الطلبات المرفوضة</a>
         </div>
       </nav>
 <!--TABLE-->
@@ -33,84 +41,36 @@
           <table >
             <thead >
             <tr">
-              <td>رقم الطلب</td>
-              <td>فئة الدم</td>
-              <td>عدد الوحدات</td>
-              <td>حالة الطلب</td>
+            <td name="number_reg">رقم الطلب</td>
+            <td name="blood_type">فئة الدم</td>
+            <td name="number_of_unit">عدد الوحدات</td>
+            <td name="accept_status">حالة الطلب</td>
             </tr>
       </thead>
-      
       <tbody>
-        <tr class="elm1">
-          <td>#1</td>
-            <td>A+</td>
-            <td>4</td>
-            <td>قبول</td>
-        </tr>
-       
-        <tr class="elm2">
-          <td>#2</td>
-            <td>AB+</td>
-            <td>7</td>
-            <td>رفض</td>
-        </tr class="elm1">
+      <?php
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            // Extract data from the current row
+                            $req_id = $row["number_reg"];
+                            $btype = $row["blood_type"];
+                            $number_of_unit = $row["number_of_unit"];
+                            $status = $row["accept_status"];
+                        ?>
+                            <tr class="elm1">
+                                <td><?php echo $req_id; ?></td>
+                                <td><?php echo $btype; ?></td>
+                                <td><?php echo $number_of_unit; ?></td>
+                                <td><?php echo $status; ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
         
-        <tr class="elm3">
-          <td>#3</td>
-            <td>O-</td>
-            <td>1</td>
-            <td>قبول</td>
-        </tr>
-      
-        <tr class="elm4">
-          <td>#4</td>
-            <td>B-</td>
-            <td>3</td>
-            <td>-</td>
-        </tr>
-      
-        <tr class="elm5">
-          <td>#5</td>
-            <td>B+</td>
-            <td>2</td>
-            <td>رفض</td>
-        </tr>
-      
-        <tr class="elm6">
-          <td>#6</td>
-            <td>O+</td>
-            <td>1</td>
-            <td>رفض</td>
-        </tr>
-      
-        <tr class="elm7">
-          <td>#7</td>
-            <td>B-</td>
-            <td>5</td>
-            <td>-</td>
-        </tr>
-      
-        <tr class="elm8">
-          <td>#8</td>
-            <td>AB-</td>
-            <td>8</td>
-            <td>قبول</td>
-        </tr>
       </tbody>
       </table>
         </div>
 
         <!--footer-->
-
-
-   
- 
- 
-
- 
-<script src="../js/bootstrap.bundle.min.js"></script>
-
-
 <div class="footer">
   <div class="container">
       <img src="/imgs/logo.png" alt="">
@@ -134,5 +94,6 @@
       </p>
   </div>
 </div>
+<script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
