@@ -7,7 +7,7 @@
 }
 
 html {
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   font-family: 'Caladea', serif;
 }
@@ -20,6 +20,7 @@ body {
   background-size: cover;
   font-family: 'Caladea', serif;
   font-size: 20px;
+  background-image: url(../imgs/sign.jpg);
 }
 
 a {
@@ -33,6 +34,7 @@ a:hover {
 }
 
 .form {
+  opacity: 0.9;
   background: #272727;
   padding: 40px;
   max-width: 600px;
