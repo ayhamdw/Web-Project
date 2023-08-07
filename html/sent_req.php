@@ -1,3 +1,11 @@
+<?php
+$conn = new mysqli("localhost", "root", "", "web_project");
+$sqlQuery = "SELECT * FROM `patientreq` WHERE accept_status ='-' ";
+$result = mysqli_query($conn, $sqlQuery);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -31,86 +39,37 @@
           <table >
             <thead >
             <tr">
-              <td>رقم الطلب</td>
-              <td>فئة الدم</td>
-              <td>عدد الوحدات</td>
-              <td>حالة الطلب</td>
+            <td name="number_reg">رقم الطلب</td>
+            <td name="blood_type">فئة الدم</td>
+            <td name="number_of_unit">عدد الوحدات</td>
+            <td name="accept_status">حالة الطلب</td>
             </tr>
       </thead>
       
       <tbody>
-        <tr class="elm1">
-          <td>#1</td>
-            <td>A+</td>
-            <td>4</td>
-            <td>-</td>
-        </tr>
-       
-        <tr class="elm2">
-          <td>#2</td>
-            <td>AB+</td>
-            <td>7</td>
-            <td>-</td>
-        </tr class="elm1">
-        
-        <tr class="elm3">
-          <td>#3</td>
-            <td>O-</td>
-            <td>1</td>
-            <td>-</td>
-        </tr>
-      
-        <tr class="elm4">
-          <td>#4</td>
-            <td>B-</td>
-            <td>3</td>
-            <td>-</td>
-        </tr>
-      
-        <tr class="elm5">
-          <td>#5</td>
-            <td>B+</td>
-            <td>2</td>
-            <td>-</td>
-        </tr>
-      
-        <tr class="elm6">
-          <td>#6</td>
-            <td>O+</td>
-            <td>1</td>
-            <td>-</td>
-        </tr>
-      
-        <tr class="elm7">
-          <td>#7</td>
-            <td>B-</td>
-            <td>5</td>
-            <td>-</td>
-        </tr>
-      
-        <tr class="elm8">
-          <td>#8</td>
-            <td>AB-</td>
-            <td>8</td>
-            <td>-</td>
-        </tr>
+      <?php
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            // Extract data from the current row
+                            $req_id = $row["number_reg"];
+                            $btype = $row["blood_type"];
+                            $number_of_unit = $row["number_of_unit"];
+                            $status = $row["accept_status"];
+                        ?>
+                            <tr class="elm1">
+                                <td><?php echo $req_id; ?></td>
+                                <td><?php echo $btype; ?></td>
+                                <td><?php echo $number_of_unit; ?></td>
+                                <td><?php echo $status; ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
       </tbody>
       </table>
         </div>
 
         <!--footer-->
 
-<div class="footer">
-  
-</div>
-
- </div> <!--end container-->
-   
- 
- 
-
- 
-<script src="../js/bootstrap.bundle.min.js"></script>
 
 
 <div class="footer">
@@ -136,5 +95,6 @@
       </p>
   </div>
 </div>
+<script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

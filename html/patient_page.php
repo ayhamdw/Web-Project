@@ -1,3 +1,20 @@
+<?php
+$conn = new mysqli("localhost", "root" , "", "web_project");
+$sqlQuery = " SELECT * FROM `patients`";
+$result = mysqli_query($conn , $sqlQuery);
+$get = mysqli_fetch_assoc($result);
+
+      $name =$get["FirstName"].$get["SecondName"];
+      $email =$get["Email"];
+      //$age = $get[""];
+      $btype = $get["BloodType"];
+    
+    
+   
+    
+    
+?>
+
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -81,8 +98,14 @@
   <div class="m-b-25">
   <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
   </div>
-  <h6 class="f-w-600">مريض 1</h6>
-  <p></p>
+  <?php
+                      $conn = new mysqli("localhost", "root" , "", "web_project");
+                      $sqlQuery = " SELECT * FROM `patients` ";
+                      $result = mysqli_query($conn , $sqlQuery);
+                     
+                     ?> 
+  <h6 class="f-w-600" name="PNAME"> <?php echo $get["FirstName"].' '.$get["SecondName"];?></h6>
+  
    <!-- edit icon--> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
   </div>
   </div>
@@ -91,21 +114,29 @@
    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">بطاقة تعريفية</h6>
          <div class="row">
   <div class="col-sm-6">
-  <p class="m-b-10 f-w-600">البريد الاكتروني</p>
+
+  <p class="m-b-10 f-w-600"> البريد الاكتروني
+  <?php echo $get["Email"]?>
+  </p>
 
   </div>
   </div>
   <br>
   <div class="row">
   <div class="col-sm-6">
-  <p class="m-b-10 f-w-600">العمر</p>
+  <p class="m-b-10 f-w-600">العمر
+
+  </p>
 
   </div>
    </div>
    <br>
    <div class="row">
     <div class="col-sm-6">
-    <p class="m-b-10 f-w-600">فئة الدم</p>
+    <p class="m-b-10 f-w-600">فئة الدم
+    <br>
+    <?php echo $get["BloodType"]?>
+    </p>
 
     </div>
      </div>

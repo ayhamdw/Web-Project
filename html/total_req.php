@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root" , "", "web_project");
+$conn = new mysqli("localhost", "root" ,"", "web_project");
 $sqlQuery = " SELECT * FROM `patientreq`";
 $result = mysqli_query($conn , $sqlQuery);
 $get = mysqli_fetch_assoc($result);
@@ -8,11 +8,8 @@ $get = mysqli_fetch_assoc($result);
     $btype = $get["blood_type"];
     $number_of_unit =$get["number_of_unit"];
     $status = $get["accept_status"];
-    
-    
+  
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -58,19 +55,19 @@ $get = mysqli_fetch_assoc($result);
       </thead>
       
       <tbody>
-      <?php
+                      <?php
                       $conn = new mysqli("localhost", "root" , "", "web_project");
                       $sqlQuery = " SELECT * FROM `patientreq` ";
                       $result = mysqli_query($conn , $sqlQuery);
                       while ($get = mysqli_fetch_assoc($result)) {
                      
                      ?> 
-        <tr class="elm1">
-          <td name="number_reg"> <?php echo $get["number_reg"];?></td>
-            <td name="blood_type"> <?php echo $get["blood_type"];?></td>
-            <td name="number_of_unit"> <?php echo $get["number_of_unit"];?></td>
-            <td name="accept_status"> <?php echo $get["accept_status"];?></td>
-        </tr>
+                        <tr class="elm1">
+                          <td name="number_reg"> <?php echo $get["number_reg"];?></td>
+                            <td name="blood_type"> <?php echo $get["blood_type"];?></td>
+                            <td name="number_of_unit"> <?php echo $get["number_of_unit"];?></td>
+                            <td name="accept_status"> <?php echo $get["accept_status"];?></td>
+                        </tr>
        
         <?php
                       }
@@ -84,18 +81,9 @@ $get = mysqli_fetch_assoc($result);
                     
         <!--footer-->
 
-
-   
- 
- 
-
- 
-<script src="../js/bootstrap.bundle.min.js"></script>
-
-
 <div class="footer">
   <div class="container">
-      <img src="/imgs/logo.png" alt="">
+      <img src="../imgs/logo.png" alt="">
 
       <p>مركز <span>قدس</span> للتبرع بالدم</p>
       <div class="social-icons">
@@ -116,5 +104,6 @@ $get = mysqli_fetch_assoc($result);
       </p>
   </div>
 </div>
+<script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

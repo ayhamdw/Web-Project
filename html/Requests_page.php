@@ -37,7 +37,7 @@
             </a>
         </li>
         <li>
-            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/Blood_Donar_Setting.html">
+            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Blood_Donar_Setting.php">
                 
                 <i class="fa-solid fa-user"></i>
                 <span class="hide-mobile">إعدادات الحساب</span>
@@ -45,7 +45,7 @@
         </li>
 
         <li>
-            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/Requests_page.html">
+            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Requests_page.php">
                 
                 <i class="fa-solid fa-circle-info"></i>
                 <span class="hide-mobile">الطلبات</span>
@@ -76,27 +76,20 @@
     <section class="page">
       <div class="card">
         <h1>اجمالي الطلبات</h1>
-      <a href="../html/total_req.html" class="card__button">انقر لرؤية جميع الطلبات</a>
+      <a href="total_req.php" class="card__button">انقر لرؤية جميع الطلبات</a>
     </div>
     <div class="card">
       <h1>الطلبات الموافق عليها</h1>
-    <a href="../html/approved_reg.html" class="card__button">انقر لرؤية جميع الطلبات</a>
+    <a href="approved_reg.php" class="card__button">انقر لرؤية جميع الطلبات</a>
   </div>
   <div class="card">
     <h1>الطلبات المرفوضة</h1>
-  <a href="../html/rejeccted_req.html" class="card__button">انقر لرؤية جميع الطلبات</a>
+  <a href="rejeccted_req.php" class="card__button">انقر لرؤية جميع الطلبات</a>
 </div>
       <div class="card">
         <h1>الطلبات المرسلة</h1>
-      <a href="../html/sent_req.html" class="card__button">انقر لرؤية جميع الطلبات</a>
+      <a href="sent_req.php" class="card__button">انقر لرؤية جميع الطلبات</a>
     </div>
-        
-    
-
-        
-
-        
-        
 
       </section>
 
@@ -104,12 +97,8 @@
       <!--footer-->
 
 >
-   
- 
  
 
- 
-<script src="../js/bootstrap.bundle.min.js"></script>
 
 
 <div class="footer">
@@ -137,5 +126,6 @@
 </div>
 
     <script src="../js/bootstrap.bundle.min.js"></script> 
+    
 </body>
 </html>
