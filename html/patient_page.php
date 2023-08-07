@@ -1,3 +1,29 @@
+<?php
+    if(isset($_POST['phoneNumber']) && isset($_POST['DonorNmae']) ){
+        $pNumber=$_POST['phoneNumber'];
+        $dName = $_POST['DonorNmae'];
+        $bType = $_POST['BloodType'];
+        try{
+            $db =new mysqli("localhost", "root" , "", "web_project");
+            $qryStr =" INSERT INTO `patients`(`DName`, `BType`, `PHNumber`) VALUES ('$dName','$bType','$pNumber') ";
+            $db->query($qryStr);
+            $db->commit();
+            $db->close();  
+        }catch(Exception $e){
+
+        }
+
+    }
+    ?>
+   
+   <?php
+    session_start();
+    $un = $_SESSION['$username'];
+    $conn = mysqli_connect("localhost", "root", "", "web_project");
+    $sqlQuery1 = "SELECT *  FROM `donars` where UserName= '".$un."'";
+    $stmt1 = mysqli_query($conn, $sqlQuery1);
+    $result = mysqli_fetch_assoc($stmt1);
+    ?>
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -25,22 +51,25 @@
       <div class="container-fluid">
       
         <!-- form-->
-
+        <a href="form_blood.php" class="btn btn-dark">اطلب دم</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        
+       
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+       
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
+            
               <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <!--Dropdown-->  
               المريض
               </button>
+              
               <ul class="dropdown-menu dropdown-menu-dark">
                 <li><a class="dropdown-item" href="../html/MainPage.html"> الرئيسية </a></li>
-                <li><a class="dropdown-item" href="../html/Requests_page.html"> الطلبات </a></li>
-                <li><a class="dropdown-item" href="../html/Blood_Donar_Setting.html"> اعدادات الحساب </a></li>
+                <li><a class="dropdown-item" href="Requests_page.php"> الطلبات </a></li>
+                <li><a class="dropdown-item" href="Blood_Donar_Setting.php"> اعدادات الحساب </a></li>
                 <li><a class="dropdown-item" href="#">تواصل معنا </a></li>
                 <li><a class="dropdown-item" href="#"> تسجيل خروج</a></li>
               </ul>
@@ -78,8 +107,9 @@
   <div class="m-b-25">
   <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
   </div>
-  <h6 class="f-w-600">مريض 1</h6>
-  <p></p>
+  
+  <h6 class="f-w-600" name="PNAME"> <?php echo $result['FirstName']." ". $result['SecondName'] ?></h6>
+  
    <!-- edit icon--> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
   </div>
   </div>
@@ -88,21 +118,29 @@
    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">بطاقة تعريفية</h6>
          <div class="row">
   <div class="col-sm-6">
-  <p class="m-b-10 f-w-600">البريد الاكتروني</p>
+
+  <p class="m-b-10 f-w-600"> البريد الاكتروني
+  <?php echo $result['Email']?>
+  </p>
 
   </div>
   </div>
   <br>
   <div class="row">
   <div class="col-sm-6">
-  <p class="m-b-10 f-w-600">العمر</p>
+  <p class="m-b-10 f-w-600">العمر
+
+  </p>
 
   </div>
    </div>
    <br>
    <div class="row">
     <div class="col-sm-6">
-    <p class="m-b-10 f-w-600">فئة الدم</p>
+    <p class="m-b-10 f-w-600">فئة الدم
+    <br>
+    <?php echo $result['BloodType']?>
+    </p>
 
     </div>
      </div>
@@ -126,8 +164,8 @@
           <h3>اجراءات نقل دم</h3>
           <p>نقل الدم (Transfusion) هو عملية نقل أو إعطاء الدم أو مكوناته من شخص إلى شخص آخر.إليك بعض الإجراءات الأساسية المتبعة في عملية نقل الدم
           </p>
-
-            <i class="fa-solid fa-arrow-left"></i>
+<a href="">تعرف عليها</a>
+            <i class="fa-solid fa-arrow-left"> </i>
           </a>
         
         </div>

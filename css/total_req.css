@@ -1,8 +1,5 @@
 
 
-.container-fluid{
-    background-color: #eee;
-}
 
 @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Cairo&family=Roboto:wght@100&display=swap');
 
@@ -160,6 +157,7 @@ body{
 }
 .footer .container
 {
+  padding: 0px;
   position: relative;
 
 }
