@@ -12,19 +12,7 @@ $get = mysqli_fetch_assoc($result);
 }
 ?>
 
-<?php
-if (isset($_POST["phone_number"])) {
-$conn = new mysqli("localhost", "root" ,"", "web_project");
-$sqlQuery = " SELECT * FROM `donorreq`";
-$result = mysqli_query($conn , $sqlQuery);
-$get = mysqli_fetch_assoc($result);
 
-    $req_id =$get["number_reg"];
-    $btype = $get["blood_type"];
-    $number_of_unit =$get["number_of_unit"];
-    $status = $get["accept_status"];
-}
-?>
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -70,9 +58,9 @@ $get = mysqli_fetch_assoc($result);
       </thead>
       
       <tbody>
-                      <?php
-                      if (isset($_POST["blood_type"])) {
-                      $conn = new mysqli("localhost", "root" , "", "web_project");
+   <?php
+                      
+  $conn = new mysqli("localhost", "root" , "", "web_project");
                       $sqlQuery = " SELECT * FROM `patientreq` ";
                       $result = mysqli_query($conn , $sqlQuery);
                       while ($get = mysqli_fetch_assoc($result)) {
@@ -87,28 +75,10 @@ $get = mysqli_fetch_assoc($result);
        
         <?php
                       }
-                      }
+                      
                     ?>
                     
-                    <?php
-                    if (isset($_POST["phone_number"])) {
-                      $conn = new mysqli("localhost", "root" , "", "web_project");
-                      $sqlQuery = " SELECT * FROM `donorreq` ";
-                      $result = mysqli_query($conn , $sqlQuery);
-                      while ($get = mysqli_fetch_assoc($result)) {
-                     
-                     ?> 
-                        <tr class="elm1">
-                          <td name="number_reg"> <?php echo $get["number_reg"];?></td>
-                            <td name="blood_type"> <?php echo $get["blood_type"];?></td>
-                            <td name="number_of_unit"> <?php echo $get["number_of_unit"];?></td>
-                            <td name="accept_status"> <?php echo $get["accept_status"];?></td>
-                        </tr>
-       
-        <?php
-                      }
-                      }
-                    ?>
+                    
         
       </tbody>
       </table>
