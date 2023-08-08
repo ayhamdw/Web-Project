@@ -60,7 +60,7 @@
             </a>
         </li>
         <li>
-            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="btp.html">
+            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/btp.html">
                 
                 <i class="fa-solid fa-notes-medical"></i>
                 <span class="hide-mobile">اجراءات نقل</span>
