@@ -87,10 +87,10 @@ if (isset($_POST["phone_number"] )) {
                 
 
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Requests_page.php">
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Requests_page_donor.php">
                         
                         <i class="fa-solid fa-file-signature"></i>
-                        <span class="hide-mobile">الطلبات</span>
+                        <span class="hide-mobile">اطلب دم</span>
                     </a>
                 </li>
                 <li>
