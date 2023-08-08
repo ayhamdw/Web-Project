@@ -1,4 +1,57 @@
+<?php
 
+    session_start();
+    $un = $_SESSION['$username'];
+    $conn = new mysqli("localhost", "root" , "", "web_project");
+    $sqlQuery = " SELECT * FROM `donars` where UserName='".$un."'";
+    $stmt = mysqli_prepare($conn, $sqlQuery);
+    $result = mysqli_query($conn , $sqlQuery);
+    $row = mysqli_fetch_assoc($result);
+    $firstName = $row["FirstName"];
+    $secondName = $row["SecondName"];
+    $Email1 = $row["Email"];
+    // $password = $row["Password"];
+
+    
+    ?>
+    <?php
+    
+    if ( isset($_POST['passName'])){ 
+        $password = $_POST['passName'];
+        // $hashPassword = md5($password);
+        // $sqlQuery = " SELECT `Password` FROM `donars` where UserName='".$un."'";
+        // $stmt = mysqli_prepare($conn, $sqlQuery);
+        // $rowCount = mysqli_stmt_num_rows($stmt);
+        // if ($rowCount > 0) {
+            // mysqli_stmt_bind_result($stmt,$dbPassword);
+            // mysqli_stmt_fetch($stmt);
+            // if ($row["Password"] == sha1($_POST['PassName'])) {
+                $fname = $_POST["FName"];
+                $secondName = $_POST["SName"];
+                $e = $_POST['email'];
+                $sqlQuery = "UPDATE `donars` SET `FirstName`='$fname',`SecondName`='$secondName' , `Email`='$e' where `UserName`='".$un."'";
+                $conn->query($sqlQuery);
+            // }
+            // else{
+            //     echo '<script>alert("Wrong Password Please Try Again")</script>';
+        //     } 
+        // }
+    }
+    // $conn = new mysqli("localhost", "root" , "", "web_project");
+
+    // if ( isset($_POST['email'])){ 
+    //     // $e = $_POST['email'];
+    //     $sqlQuery = "UPDATE `donars` SET `Email`='$e' where `UserName`='".$un."'";
+    //     $conn->query($sqlQuery);
+
+    // }
+
+
+        
+
+    
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +100,7 @@
                 </li>
                 
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/Blood_Donar_Setting.html">
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/Blood_Donar_Setting.php">
                         
                         <i class="fa-solid fa-gear"></i>
                         <span class="hide-mobile">إعدادات الحساب</span>
@@ -94,18 +147,18 @@
                     <h2 class="CP mt-0 mb-10">تعديل الاسم</h2>
                     <p class="mt-0 mb-20 c-grey fs-15">تعديل البيانات الخاصة بك</p>
                     <div class="mb-15 between-flex">
-                        <div>
-                            <!-- <span>لوحة التحكم</span> -->
-                            <!-- <p class="c-grey mt-5 mb-0 fs-13"></p> -->
-                            <span>قم بإدخال الإسم الرباعي الجديد الخاص بك</span>
-                        </div>
+                        
                         
                     </div>
-                    <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="اسم الشخص">
-                    <span>الرجاء ادخال كلمة المرور لتأكيد العملية</span>
-                    <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="password" placeholder="كلمة المرور">
-                    <input class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape" type="submit" value="تأكيد">
-
+                    <form action="Blood_Donar_Setting.php" method="post" >
+                        <span>ادخل الاسم الاول الجديد</span>
+                        <input value="<?php echo $firstName ?>" id="FName" name="FName" class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="الاسم الاول">
+                        <span>ادخل الاسم الاخير الجديد</span>
+                        <input value="<?php echo $secondName ?>" id="LName" name="SName" class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="الاسم الاخير">
+                        <span>الرجاء ادخال كلمة المرور لتأكيد العملية</span>
+                        <input id="passName" name="passName" class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="password" placeholder="كلمة المرور">
+                        <input class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape" type="submit" value="تأكيد">
+                    </form>
                     <!-- <textarea class="close-message p-10 rad-6 d-block w-full" placeholder="الرجاء تزويدنا برأيك حول استخدامك للموقع"></textarea> -->
                 
                 </div>
@@ -135,23 +188,26 @@
                     <!-- <p class="mt-0 mb-20 c-grey fs-15">تعديل البيانات الخاصة بك</p> -->
                     <div class="mb-15 between-flex">
                         <div>
-                            <span>قم بإدخال البريد الإالكتروني القديم</span>
+                            <span>قم بتعديل البريد الالكتروني من هنا</span>
                             
 
                         </div>
                         
                         
                     </div>
-                    <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="example@gmail.com">
-                    <span>الرجاء ادخال كلمة المرور لتأكيد العملية</span>
+                    <!-- <form action="Blood_Donar_Setting.php" method="get" > -->
+                    <input id="email" name="email" value="<?php echo $Email1 ?>" class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="example@gmail.com">
+                    <!-- <span>الرجاء ادخال كلمة المرور لتأكيد العملية</span>
                     <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="password" placeholder="كلمة المرور">
                     <input class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape" type="submit" value="ارسل رمز التأكيد">
                     <span>ادخل رمز التأكيد</span>
                     <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="رمز التأكيد">
                     <span>ادخل البريد الالكتروني الجديد</span>
-                    <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="example@gmail.com">
+                    <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="example@gmail.com"> -->
+                    
+                    
                     <input class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape" type="submit" value="تأكيد">
-
+                    <!-- </form> -->
                     <!-- <textarea class="close-message p-10 rad-6 d-block w-full" placeholder="الرجاء تزويدنا برأيك حول استخدامك للموقع"></textarea> -->
                 
                 </div>
