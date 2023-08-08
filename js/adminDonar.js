@@ -41,25 +41,3 @@ function myFunction() {
     }
   }
 }
-
-function getIndex(x) {
-  // index of row
-  tableIndex = x.rowIndex;
-  console.log(tableIndex);
-}
-function deleteDonar() {
-  let username =
-    document.getElementById("myTable").rows[tableIndex].cells[3].innerHTML;
-  document.getElementById("myTable").deleteRow(tableIndex);
-  console.log(username);
-  $(document).ready(function () {
-    var url = window.location.href;
-    var params = url.split("?ID=");
-    $.ajax({
-      type: "POST",
-      url: "adminDonar.php",
-      data: { id: username },
-      success: function (result) {},
-    });
-  });
-}

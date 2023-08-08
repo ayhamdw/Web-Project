@@ -1,15 +1,20 @@
 <?php
-if (isset($_POST["blood_type"])) {
-  $btype = $_POST["blood_type"];
-  $number_of_unit = $_POST["number_of_unit"];
-  $idnumber = $_POST["number_id"];
-  $result = "";
-      $sqlQuery = "INSERT INTO `patientreq`(`blood_type`,`number_of_unit`,`number_id`) VALUES ('$btype','$number_of_unit','$idnumber')";
-      $conn = new mysqli("localhost", "root" ,"", "web_project");
-      $conn->query($sqlQuery);
-      $sqlQuery = "SELECT * FROM `patientreq`";
-      $result = $conn->query($sqlQuery);              
+session_start();
+if (isset($_SESSION['usernameSession'])) {
+    $username = $_SESSION['usernameSession'];
+    if (isset($_POST["blood_type"])) {
+      $btype = $_POST["blood_type"];
+      $number_of_unit = $_POST["number_of_unit"];
+      $requestID = $_POST["requestID"];
+      $result = "";
+          $sqlQuery = "INSERT INTO `patientreq`(`requestID`, `blood_type`, `number_of_unit`, `patientUserName`) VALUES ('$requestID','$btype','$number_of_unit','$username')";
+          $conn = new mysqli("localhost", "root" ,"", "web_project");
+          $conn->query($sqlQuery);
+          $sqlQuery = "SELECT * FROM `patientreq`";
+          $result = $conn->query($sqlQuery);              
+    }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +49,10 @@ if (isset($_POST["blood_type"])) {
                 <div class="card">
                     <a class="singup">اطلب دم</a>
                     <div class="inputBox">
+                        <input type="text"  name="requestID" required="required">
+                        <span >رقم الطلب</span>
+                    </div>
+                    <div class="inputBox">
                         <input type="text"  name="blood_type" required="required">
                         <span >فئة الدم</span>
                     </div>
@@ -51,11 +60,6 @@ if (isset($_POST["blood_type"])) {
                     <div class="inputBox">
                         <input type="text" name="number_of_unit" required="required">
                         <span>عدد الوحدات</span>
-                    </div>
-        
-                    <div class="inputBox">
-                        <input type="text"  name="number_id" required="required">
-                       <span> رقم الهوية</span>
                     </div>
         
                   <!--button sumbit-->

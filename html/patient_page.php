@@ -1,21 +1,4 @@
-<?php
-    if(isset($_POST['phoneNumber']) && isset($_POST['DonorNmae']) ){
-        $pNumber=$_POST['phoneNumber'];
-        $dName = $_POST['DonorNmae'];
-        $bType = $_POST['BloodType'];
-        try{
-            $db =new mysqli("localhost", "root" , "", "web_project");
-            $qryStr =" INSERT INTO `patients`(`DName`, `BType`, `PHNumber`) VALUES ('$dName','$bType','$pNumber') ";
-            $db->query($qryStr);
-            $db->commit();
-            $db->close();  
-        }catch(Exception $e){
 
-        }
-
-    }
-    ?>
-   
    <?php
     session_start();
     $un = $_SESSION['$username'];
@@ -68,7 +51,7 @@
               
               <ul class="dropdown-menu dropdown-menu-dark">
                 <li><a class="dropdown-item" href="../html/MainPage.html"> الرئيسية </a></li>
-                <li><a class="dropdown-item" href="Requests_page.php"> الطلبات </a></li>
+                <li><a class="dropdown-item" href="Requests_page_patient.php"> الطلبات </a></li>
                 <li><a class="dropdown-item" href="Blood_Donar_Setting.php"> اعدادات الحساب </a></li>
                 <li><a class="dropdown-item" href="#">تواصل معنا </a></li>
                 <li><a class="dropdown-item" href="#"> تسجيل خروج</a></li>
@@ -108,7 +91,7 @@
   <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
   </div>
   
-  <h6 class="f-w-600" name="PNAME"> <?php echo $result['FirstName']." ". $result['SecondName'] ?></h6>
+  <h6 class="f-w-600" name="PNAME"> </h6>
   
    <!-- edit icon--> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
   </div>
@@ -120,7 +103,7 @@
   <div class="col-sm-6">
 
   <p class="m-b-10 f-w-600"> البريد الاكتروني
-  <?php echo $result['Email']?>
+  
   </p>
 
   </div>
@@ -139,7 +122,7 @@
     <div class="col-sm-6">
     <p class="m-b-10 f-w-600">فئة الدم
     <br>
-    <?php echo $result['BloodType']?>
+    
     </p>
 
     </div>

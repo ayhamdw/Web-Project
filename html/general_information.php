@@ -26,9 +26,9 @@
                     <span></span>
                 </span>
                 <ul>
-                    <li><a href="/html/MainPage.html">الرئيسية</a></li>
-                    <li><a href="/html/Blood_Donor.html">تبرع الآن</a></li>
-                    <li><a href="/html/patient_page.html">اطلب دم</a></li>
+                    <li><a href="/html/MainPage.php">الرئيسية</a></li>
+                    <li><a href="/html/Blood_Donor.phpl">تبرع الآن</a></li>
+                    <li><a href="/html/patient_page.php">اطلب دم</a></li>
                     
                 </ul>
             </div>

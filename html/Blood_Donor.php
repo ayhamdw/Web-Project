@@ -1,19 +1,15 @@
 <?php
+session_start();
 if (isset($_POST["blood_type"])) {
-  $btype = $_POST["blood_type"];
-  $number_of_unit = $_POST["number_of_unit"];
-  $idnumber = $_POST["number_id"];
-  $result = "";
-      $sqlQuery = "INSERT INTO `donorreq`(`blood_type`,`number_of_unit`,`number_id`) VALUES ('$btype','$number_of_unit','$idnumber')";
-      $conn = new mysqli("localhost", "root" ,"", "web_project");
-      $conn->query($sqlQuery);
-      $sqlQuery = "SELECT * FROM `donorreq`";
-      $result = $conn->query($sqlQuery);              
+    $username = $_SESSION['usernameSession'];
+    $btype = $_POST["blood_type"];
+    $number_of_unit = $_POST["number_of_unit"];
+    $requestID = $_POST["requestID"];
+    $sqlQuery = "INSERT INTO `donorreq`(`requestID`, `DName`, `BType`, `donarUserName`) VALUES ('$requestID','$btype','$number_of_unit','$username')";
+    $conn = new mysqli("localhost", "root" ,"", "web_project");
+    $conn->query($sqlQuery);          
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +43,10 @@ if (isset($_POST["blood_type"])) {
     </script>
 
     <?php
-    session_start();
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
     $un = $_SESSION['$username'];
     $conn = mysqli_connect("localhost", "root", "", "web_project");
     $sqlQuery1 = "SELECT *  FROM `donars` where UserName= '".$un."'";
@@ -142,44 +141,14 @@ if (isset($_POST["blood_type"])) {
                     <h2 class="mt-0 mb-10 ">تقديم طلب تبرع</h2>
                     <p class="confirm mt-0 mb-20 c-gray fs-15">الرجاء التأكد من جميع البيانات قبل التأكيد</p>
                     <form action="Blood_Donor.php" method="post" >
+                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="requestID" placeholder="رقم الطلب">                        
                         <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="blood_type" placeholder="فئة الدم">
-                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="number_of_unit" placeholder="عدد الوحدات">
-                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="number_id" placeholder="رقم الهوية">
-                        
+                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="number_of_unit" placeholder="عدد الوحدات">                        
                         <!-- <textarea class=" d-block mb-20 w-full p-10 b-none bg-eee rad-6" placeholder="Your Though"></textarea> -->
                         <input class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape" method="post" type="submit" value="تأكيد الطلب">
                     </form>    
                 </div>
                 <!-- End Request Donation -->
-
-                <?php
-                // session_start();
-                $un = $_SESSION['$username'];
-                $conn = mysqli_connect("localhost", "root", "", "web_project");
-                $sqlQuery1 = "SELECT *  FROM `donars` ";
-                $stmt1 = mysqli_query($conn, $sqlQuery1);
-                $result1 = mysqli_fetch_assoc($stmt1);
-
-                $sqlQuery2 =  "SELECT * FROM `donars` ORDER BY username DESC LIMIT 1, 1 ";
-                $stmt2 = mysqli_query($conn, $sqlQuery2);
-                $result2 = mysqli_fetch_assoc($stmt2);
-
-                $sqlQuery3 =  "SELECT * FROM `donars` ORDER BY username ASC LIMIT 2,1";
-                $stmt3 = mysqli_query($conn, $sqlQuery3);
-                $result3 = mysqli_fetch_assoc($stmt3);
-                
-                $sqlQuery4 =  "SELECT * FROM `donars` ORDER BY username DESC LIMIT 3, 1 ";
-                $stmt4 = mysqli_query($conn, $sqlQuery4);
-                $result4 = mysqli_fetch_assoc($stmt4);
-
-                $sqlQuery5 =  "SELECT * FROM `donars` ORDER BY username DESC LIMIT 4, 1 ";
-                $stmt5 = mysqli_query($conn, $sqlQuery5);
-                $result5 = mysqli_fetch_assoc($stmt5);
-
-                $sqlQuery6 =  "SELECT * FROM `donars` ORDER BY username DESC LIMIT 5, 1 ";
-                $stmt6 = mysqli_query($conn, $sqlQuery6);
-                $result6 = mysqli_fetch_assoc($stmt6);
-                ?>
 
 <!-- ======= -->
     </form>
@@ -189,71 +158,52 @@ if (isset($_POST["blood_type"])) {
                 <h2 class="mt-0 mb-20">أخر التبرعات</h2>
                 <div class="responsive-table">
                     
-                    <table class="fs-15 w-full" >
+                    <table class="fs-15 w-full" id="deleteTable"  >
                         <thead>
                             <tr>
+                                <td>رقم الطلب</td>
                                 <td>الإسم</td>
-                                <td>تاريخ اخر تبرع</td>
                                 <td>مكان التبرع</td>
                                 <td>نوع الدم</td>
-                                <td>عدد مرات التبرع</td>
-                                <td>حالة آخر تبرع</td>
+                                <td>حالة التبرع</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><?php echo $result1['FirstName']?></td>
-                                <td>10 May 2022</td>
-                                <td>قلقيلية</td>
-                                <td>AB-</td>
-                                <td>4 مرات</td>
-                                <td>
-                                  <span class="label btn-shape bg-red c-white">فاشلة</span>
-                                </td>
-                              </tr>
-                              <tr>
-                                
-                                <td><?php echo $result2['FirstName']?></td>
-                                <td>12 Oct 2021</td>
-                                <td>نابلس</td>
-                                <td>O-</td>
-                                <td>5 مرات</td>
-                                <td><span class="label btn-shape bg-red c-white">فاشلة</span></td>
-                              </tr>
-                              <tr>
-                                <td><?php echo $result3['FirstName']?></td>
-                                <td>05 Sep 2021</td>
-                                <td>طولكرم</td>
-                                <td>B+</td>
-                                <td>مرتين</td>
-                                <td><span class="label btn-shape bg-green c-white">ناجحة</span></td>
-                              </tr>
-                              <tr>
-                                <td><?php echo $result4['FirstName']?></td>
-                                <td>22 May 2021</td>
-                                <td>طوباس</td>
-                                <td>A-</td>
-                                <td>6 مرات</td>
-                                <td><span class="label btn-shape bg-green c-white">ناجحة</span></td>
-                              </tr>
-                              <tr>
-                                <td><?php echo $result5['FirstName']?></td>
-                                <td>24 May 2021</td>
-                                <td>جنين</td>
-                                <td>O+</td>
-                                <td>مرة واحدة</td>
-                                <td><span class="label btn-shape bg-red c-white">فاشلة</span></td>
-                              </tr>
-                              <tr>
-                                <td><?php echo $result6['FirstName']?></td>
-                                <td>01 Mar 2021</td>
-                                <td>أريحا</td>
-                                <td>A+</td>
-                                <td>ثلاث مرات</td>
-                                <td><span class="label btn-shape bg-green c-white">ناجحة</span></td>
-                              </tr>
-                        </tbody>
+                        <?php
+                        if (isset($_POST["blood_type"])) {
+                            
+                            $conn = new mysqli("localhost", "root" , "", "web_project");
+                            $sqlQuery = "SELECT donorreq.requestID  , donars.FirstName , donars.SecondName , donars.City , donorreq.DName , donorreq.Status FROM donars , donorreq WHERE donorreq.donarUserName =  '$username' ";
+                            $result = mysqli_query($conn , $sqlQuery);
 
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                            <tr>
+                                <td><?php echo $row['requestID'] ?></td>
+                                <td><?php echo $row['FirstName']." ". $row['SecondName']?></td>
+                                <td><?php echo $row['City']?></td>
+                                <td><?php echo $row['DName']?></td>
+                                <?php
+                                if ( $row['Status'] == 'Waiting' ) {
+                                    echo '<td><span class="label btn-shape bg-blue c-white">'.$row['Status'].'</span></td>';
+                                }
+                                elseif ( $row['Status'] == 'Accept' ) {
+                                    echo '<td><span class="label btn-shape bg-green c-white">'.$row['Status'].'</span></td>';
+                                }
+                                elseif ( $row['Status'] == 'Decline' ) {
+                                    echo '<td><span class="label btn-shape bg-red c-white">'.$row['Status'].'</span></td>';
+                                }
+                                ?>
+                              </tr>
+                            <?php
+                                }
+                            }
+                            ?>
+                           
+                        
+                        
+                            
+                      </tbody>
                     </table>
                 </div>
             </div>
@@ -283,6 +233,7 @@ if (isset($_POST["blood_type"])) {
             </p>
         </div>
     </div>
+    
     
 
 

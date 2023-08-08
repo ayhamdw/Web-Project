@@ -1,4 +1,3 @@
-function show()
-{
-    document.getElementById('sidebar').classList.toggle('active');
+function show() {
+  document.getElementById("sidebar").classList.toggle("active");
 }
