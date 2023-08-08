@@ -221,6 +221,9 @@ if (isset($_POST['firstName'])) {
             <input type="text" id= "PhoneNumber" name = "phoneNumber" required placeholder="Phone Number" />
           </div>
           <div class="field-wrap">
+            <input type="text" id= "City" name ="city" required placeholder="ID_number" />
+          </div>
+          <div class="field-wrap">
             <input type="password" name = "password" id= "passwordIn" required placeholder="Password" />
           </div>
           <div class="field-wrap">
