@@ -151,7 +151,7 @@ if (isset($_POST["phone_number"] )) {
                     </form>    
                 </div>
                 <!-- End Request Donation -->
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD -->
                 <?php
                 // session_start();
                 $un = $_SESSION['$username'];
@@ -164,20 +164,26 @@ if (isset($_POST["phone_number"] )) {
                 $stmt2 = mysqli_query($conn, $sqlQuery2);
                 $result2 = mysqli_fetch_assoc($stmt2);
 
-                $sqlQuery3 =  "SELECT * FROM `donars` ORDER BY username DESC LIMIT 2, 2 ";
+                $sqlQuery3 =  "SELECT * FROM `donars` ORDER BY username ASC LIMIT 2,1";
                 $stmt3 = mysqli_query($conn, $sqlQuery3);
                 $result3 = mysqli_fetch_assoc($stmt3);
                 
-                $sqlQuery4 =  "SELECT * FROM `donars` ORDER BY username DESC LIMIT 3, 3 ";
+                $sqlQuery4 =  "SELECT * FROM `donars` ORDER BY username DESC LIMIT 3, 1 ";
                 $stmt4 = mysqli_query($conn, $sqlQuery4);
                 $result4 = mysqli_fetch_assoc($stmt4);
 
+                $sqlQuery5 =  "SELECT * FROM `donars` ORDER BY username DESC LIMIT 4, 1 ";
+                $stmt5 = mysqli_query($conn, $sqlQuery5);
+                $result5 = mysqli_fetch_assoc($stmt5);
 
+                $sqlQuery6 =  "SELECT * FROM `donars` ORDER BY username DESC LIMIT 5, 1 ";
+                $stmt6 = mysqli_query($conn, $sqlQuery6);
+                $result6 = mysqli_fetch_assoc($stmt6);
                 ?>
 
-=======
+<!-- ======= -->
     </form>
->>>>>>> 85c4d332d738402db6f34d6d39b0ef576bb24fac
+<!-- >>>>>>> 85c4d332d738402db6f34d6d39b0ef576bb24fac -->
             </div>
             <div class="projects p-20 bg-white rad-10 m-20">
                 <h2 class="mt-0 mb-20">أخر التبرعات</h2>
@@ -231,7 +237,7 @@ if (isset($_POST["phone_number"] )) {
                                 <td><span class="label btn-shape bg-green c-white">ناجحة</span></td>
                               </tr>
                               <tr>
-                                <td>شريف</td>
+                                <td><?php echo $result5['FirstName']?></td>
                                 <td>24 May 2021</td>
                                 <td>جنين</td>
                                 <td>O+</td>
@@ -239,7 +245,7 @@ if (isset($_POST["phone_number"] )) {
                                 <td><span class="label btn-shape bg-red c-white">فاشلة</span></td>
                               </tr>
                               <tr>
-                                <td>عبدالله</td>
+                                <td><?php echo $result6['FirstName']?></td>
                                 <td>01 Mar 2021</td>
                                 <td>أريحا</td>
                                 <td>A+</td>
