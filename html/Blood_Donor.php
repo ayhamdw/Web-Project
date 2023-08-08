@@ -219,39 +219,7 @@ if (isset($_POST["phone_number"] )) {
                                 <td>O-</td>
                                 <td>5 مرات</td>
                                 <td><span class="label btn-shape bg-red c-white">فاشلة</span></td>
-                              </tr>
-                              <tr>
-                                <td><?php echo $result3['FirstName']?></td>
-                                <td>05 Sep 2021</td>
-                                <td>طولكرم</td>
-                                <td>B+</td>
-                                <td>مرتين</td>
-                                <td><span class="label btn-shape bg-green c-white">ناجحة</span></td>
-                              </tr>
-                              <tr>
-                                <td><?php echo $result4['FirstName']?></td>
-                                <td>22 May 2021</td>
-                                <td>طوباس</td>
-                                <td>A-</td>
-                                <td>6 مرات</td>
-                                <td><span class="label btn-shape bg-green c-white">ناجحة</span></td>
-                              </tr>
-                              <tr>
-                                <td><?php echo $result5['FirstName']?></td>
-                                <td>24 May 2021</td>
-                                <td>جنين</td>
-                                <td>O+</td>
-                                <td>مرة واحدة</td>
-                                <td><span class="label btn-shape bg-red c-white">فاشلة</span></td>
-                              </tr>
-                              <tr>
-                                <td><?php echo $result6['FirstName']?></td>
-                                <td>01 Mar 2021</td>
-                                <td>أريحا</td>
-                                <td>A+</td>
-                                <td>ثلاث مرات</td>
-                                <td><span class="label btn-shape bg-green c-white">ناجحة</span></td>
-                              </tr>
+                              </tr>                                
                         </tbody>
 
                     </table>
