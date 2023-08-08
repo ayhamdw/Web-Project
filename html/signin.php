@@ -97,7 +97,7 @@ if (isset($_POST['usernameUp']) && isset($_POST['passwordUp'])) {
     else {
       header("Location: signin.php");
     }
-
+    $_SESSION['usernameSession'] = $username;
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 }

@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,21 +71,27 @@
                   <th>Username</th>
                   <th>Email</th>
                   <th>City</th>
-                  <th>Last Donate Date</th>
+                  <th>Number Of Units</th>
                   <th>Blood Type</th>
                   <th class="text-right">Actions</th>
               </tr>
           </thead>
           <tbody>
+          <?php
+                      $conn = new mysqli("localhost", "root" , "", "web_project");
+                      $sqlQuery = " SELECT patients.FirstName,patients.SecondName ,patients.UserName , patients.Email , patients.City , patientreq.number_of_unit , patients.BloodType from `patients`, `patientreq` where patients.UserName = patientreq.patientUserName ";
+                      $result = mysqli_query($conn , $sqlQuery);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                     ?> 
               <tr>
                   <td class="text-center">1</td>
-                  <td>Ayham</td>
-                  <td>Dw</td>
-                  <td>ayh00am</td>
-                  <td>ayham.1399@gmail.com</td>
-                  <td>Qalqilya</td>
-                  <td>10/06/2023</td>
-                  <td>O+</td>
+                  <td><?php echo $row["FirstName"];?></td>
+                  <td><?php echo $row["SecondName"];?></td>
+                  <td><?php echo $row["UserName"];?></td>
+                  <td><?php echo $row["Email"];?></td>
+                  <td><?php echo $row["City"];?></td>
+                  <td><?php echo $row["number_of_unit"];?></td>
+                  <td><?php echo $row["BloodType"];?></td>
                   <td class="td-actions text-right">
                     <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" id="Accept" data-original-title="" title="">
                       <i class="fa-solid fa-check"></i>
@@ -92,75 +100,9 @@
                       <i class="fa-solid fa-xmark"></i>
                     </button>
                 </td>
-              </tr>
-                  <td class="text-center">1</td>
-                  <td>Ayham</td>
-                  <td>Dw</td>
-                  <td>ayh00am</td>
-                  <td>ayham.1399@gmail.com</td>
-                  <td>Qalqilya</td>
-                  <td>10/06/2023</td>
-                  <td>O+</td>
-                  <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" id="Accept" data-original-title="" title="">
-                      <i class="fa-solid fa-check"></i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" id="decline" data-original-title="" title="">
-                      <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </td>
-              </tr>
-              <td class="text-center">1</td>
-              <td>Ayham</td>
-              <td>Dw</td>
-              <td>ayh00am</td>
-              <td>ayham.1399@gmail.com</td>
-              <td>Qalqilya</td>
-              <td>10/06/2023</td>
-              <td>O+</td>
-              <td class="td-actions text-right">
-                <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" id="Accept" data-original-title="" title="">
-                  <i class="fa-solid fa-check"></i>
-                </button>
-                <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" id="decline" data-original-title="" title="">
-                  <i class="fa-solid fa-xmark""></i>
-                </button>
-            </td>
-          </tr>
-                  <td class="text-center">1</td>
-                  <td>Ayham</td>
-                  <td>Dw</td>
-                  <td>ayh00am</td>
-                  <td>ayham.1399@gmail.com</td>
-                  <td>Qalqilya</td>
-                  <td>10/06/2023</td>
-                  <td>O+</td>
-                  <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" id="Accept" data-original-title="" title="">
-                      <i class="fa-solid fa-check"></i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" id="decline" data-original-title="" title="">
-                      <i class="fa-solid fa-xmark""></i>
-                    </button>
-                </td>
-              </tr>
-              <td class="text-center">1</td>
-              <td>Ayham</td>
-              <td>Dw</td>
-              <td>ayh00am</td>
-              <td>ayham.1399@gmail.com</td>
-              <td>Qalqilya</td>
-              <td>10/06/2023</td>
-              <td>O+</td>
-              <td class="td-actions text-right">
-                <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" id="Accept" data-original-title="" title="">
-                  <i class="fa-solid fa-check"></i>
-                </button>
-                <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" id="decline" data-original-title="" title="">
-                  <i class="fa-solid fa-xmark"></i>
-                </button>
-            </td>
-          </tr>
+                  <?php
+                      }
+                  ?>
           </tbody>
       </table>
       </div>
@@ -176,21 +118,27 @@
                   <th>Username</th>
                   <th>Email</th>
                   <th>City</th>
-                  <th>Last Donate Date</th>
+                  <th>Number of Units</th>
                   <th>Blood Type</th>
                   <th class="text-right">Actions</th>
               </tr>
           </thead>
           <tbody>
+          <?php
+                      $conn = new mysqli("localhost", "root" , "", "web_project");
+                      $sqlQuery = "SELECT donars.FirstName , donars.SecondName , donars.UserName , donars.Email , donars.City , donorreq.BType , donars.BloodType FROM donars , donorreq WHERE donars.UserName = donorreq.donarUserName;";
+                      $result = mysqli_query($conn , $sqlQuery);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                     ?> 
               <tr>
                   <td class="text-center">1</td>
-                  <td>Ayham</td>
-                  <td>Dw</td>
-                  <td>ayh00am</td>
-                  <td>ayham.1399@gmail.com</td>
-                  <td>Qalqilya</td>
-                  <td>10/06/2023</td>
-                  <td>O+</td>
+                  <td><?php echo $row["FirstName"];?></td>
+                  <td><?php echo $row["SecondName"];?></td>
+                  <td><?php echo $row["UserName"];?></td>
+                  <td><?php echo $row["Email"];?></td>
+                  <td><?php echo $row["City"];?></td>
+                  <td><?php echo $row["BType"];?></td>
+                  <td><?php echo $row["BloodType"];?></td>
                   <td class="td-actions text-right">
                     <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" id="Accept" data-original-title="" title="">
                       <i class="fa-solid fa-check"></i>
@@ -199,75 +147,9 @@
                       <i class="fa-solid fa-xmark"></i>
                     </button>
                 </td>
-              </tr>
-                  <td class="text-center">1</td>
-                  <td>Ayham</td>
-                  <td>Dw</td>
-                  <td>ayh00am</td>
-                  <td>ayham.1399@gmail.com</td>
-                  <td>Qalqilya</td>
-                  <td>10/06/2023</td>
-                  <td>O+</td>
-                  <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" id="Accept" data-original-title="" title="">
-                      <i class="fa-solid fa-check"></i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" id="decline" data-original-title="" title="">
-                      <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </td>
-              </tr>
-              <td class="text-center">1</td>
-              <td>Ayham</td>
-              <td>Dw</td>
-              <td>ayh00am</td>
-              <td>ayham.1399@gmail.com</td>
-              <td>Qalqilya</td>
-              <td>10/06/2023</td>
-              <td>O+</td>
-              <td class="td-actions text-right">
-                <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" id="Accept" data-original-title="" title="">
-                  <i class="fa-solid fa-check"></i>
-                </button>
-                <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" id="decline" data-original-title="" title="">
-                  <i class="fa-solid fa-xmark""></i>
-                </button>
-            </td>
-          </tr>
-                  <td class="text-center">1</td>
-                  <td>Ayham</td>
-                  <td>Dw</td>
-                  <td>ayh00am</td>
-                  <td>ayham.1399@gmail.com</td>
-                  <td>Qalqilya</td>
-                  <td>10/06/2023</td>
-                  <td>O+</td>
-                  <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" id="Accept" data-original-title="" title="">
-                      <i class="fa-solid fa-check"></i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" id="decline" data-original-title="" title="">
-                      <i class="fa-solid fa-xmark""></i>
-                    </button>
-                </td>
-              </tr>
-              <td class="text-center">1</td>
-              <td>Ayham</td>
-              <td>Dw</td>
-              <td>ayh00am</td>
-              <td>ayham.1399@gmail.com</td>
-              <td>Qalqilya</td>
-              <td>10/06/2023</td>
-              <td>O+</td>
-              <td class="td-actions text-right">
-                <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" id="Accept" data-original-title="" title="">
-                  <i class="fa-solid fa-check"></i>
-                </button>
-                <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" id="decline" data-original-title="" title="">
-                  <i class="fa-solid fa-xmark"></i>
-                </button>
-            </td>
-          </tr>
+                  <?php
+                      }
+                  ?>
           </tbody>
       </table>
       </div>

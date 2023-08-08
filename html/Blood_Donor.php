@@ -1,19 +1,15 @@
 <?php
+session_start();
 if (isset($_POST["blood_type"])) {
-  $btype = $_POST["blood_type"];
-  $number_of_unit = $_POST["number_of_unit"];
-  $idnumber = $_POST["number_id"];
-  $result = "";
-      $sqlQuery = "INSERT INTO `donorreq`(`blood_type`,`number_of_unit`,`number_id`) VALUES ('$btype','$number_of_unit','$idnumber')";
-      $conn = new mysqli("localhost", "root" ,"", "web_project");
-      $conn->query($sqlQuery);
-      $sqlQuery = "SELECT * FROM `donorreq`";
-      $result = $conn->query($sqlQuery);              
+    $username = $_SESSION['usernameSession'];
+    $btype = $_POST["blood_type"];
+    $number_of_unit = $_POST["number_of_unit"];
+    $requestID = $_POST["requestID"];
+    $sqlQuery = "INSERT INTO `donorreq`(`requestID`, `DName`, `BType`, `donarUserName`) VALUES ('$requestID','$btype','$number_of_unit','$username')";
+    $conn = new mysqli("localhost", "root" ,"", "web_project");
+    $conn->query($sqlQuery);          
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +43,6 @@ if (isset($_POST["blood_type"])) {
     </script>
 
     <?php
-    session_start();
     $un = $_SESSION['$username'];
     $conn = mysqli_connect("localhost", "root", "", "web_project");
     $sqlQuery1 = "SELECT *  FROM `donars` where UserName= '".$un."'";
@@ -142,10 +137,9 @@ if (isset($_POST["blood_type"])) {
                     <h2 class="mt-0 mb-10 ">تقديم طلب تبرع</h2>
                     <p class="confirm mt-0 mb-20 c-gray fs-15">الرجاء التأكد من جميع البيانات قبل التأكيد</p>
                     <form action="Blood_Donor.php" method="post" >
+                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="requestID" placeholder="رقم الطلب">                        
                         <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="blood_type" placeholder="فئة الدم">
-                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="number_of_unit" placeholder="عدد الوحدات">
-                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="number_id" placeholder="رقم الهوية">
-                        
+                        <input class="name-input d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" name="number_of_unit" placeholder="عدد الوحدات">                        
                         <!-- <textarea class=" d-block mb-20 w-full p-10 b-none bg-eee rad-6" placeholder="Your Though"></textarea> -->
                         <input class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape" method="post" type="submit" value="تأكيد الطلب">
                     </form>    
@@ -251,6 +245,7 @@ if (isset($_POST["blood_type"])) {
             </p>
         </div>
     </div>
+    
     
 
 
