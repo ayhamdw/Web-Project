@@ -45,7 +45,7 @@
         </li>
 
         <li>
-            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Requests_page.php">
+            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Requests_page_patient.php">
                 
                 <i class="fa-solid fa-circle-info"></i>
                 <span class="hide-mobile">الطلبات</span>
@@ -60,7 +60,7 @@
             </a>
         </li>
         <li>
-            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/btp.html">
+            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="btp.html">
                 
                 <i class="fa-solid fa-notes-medical"></i>
                 <span class="hide-mobile">اجراءات نقل</span>
@@ -76,19 +76,19 @@
     <section class="page">
       <div class="card">
         <h1>اجمالي الطلبات</h1>
-      <a href="total_req.php" class="card__button">انقر لرؤية جميع الطلبات</a>
+      <a href="total_req_patient.php" class="card__button">انقر لرؤية جميع الطلبات</a>
     </div>
     <div class="card">
       <h1>الطلبات الموافق عليها</h1>
-    <a href="approved_reg.php" class="card__button">انقر لرؤية جميع الطلبات</a>
+    <a href="approved_reg_patient.php" class="card__button">انقر لرؤية جميع الطلبات</a>
   </div>
   <div class="card">
     <h1>الطلبات المرفوضة</h1>
-  <a href="rejeccted_req.php" class="card__button">انقر لرؤية جميع الطلبات</a>
+  <a href="rejeccted_req_patient.php" class="card__button">انقر لرؤية جميع الطلبات</a>
 </div>
       <div class="card">
         <h1>الطلبات المرسلة</h1>
-      <a href="sent_req.php" class="card__button">انقر لرؤية جميع الطلبات</a>
+      <a href="sent_req_patient.php" class="card__button">انقر لرؤية جميع الطلبات</a>
     </div>
 
       </section>
