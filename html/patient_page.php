@@ -184,7 +184,53 @@ if (isset($_POST["BloodType"])) {
 </thead>
 
 <tbody>
+<tr class="elm1">
+    <td>A+</td>
+      <td>A+ AB+</td>
+      <td>A+ A- O+ O-</td>
+  </tr>
+ 
+  <tr class="elm2">
+    <td>O+</td>
+      <td>O+ A+ B+ AB+</td>
+      <td>O+ O-</td>
+  </tr class="elm1">
   
+  <tr class="elm3">
+    <td>B+</td>
+      <td>B+ AB+</td>
+      <td>B+ B- O+ O-</td>
+  </tr>
+
+  <tr class="elm4">
+    <td>AB+</td>
+      <td>AB+</td>
+      <td>Everyone</td>
+  </tr>
+
+  <tr class="elm5">
+    <td>A-</td>
+      <td>A+ A- AB+ AB-</td>
+      <td>A- O-</td>
+  </tr>
+
+  <tr class="elm6">
+    <td>O-</td>
+      <td>Everyone</td>
+      <td>O-</td>
+  </tr>
+
+  <tr class="elm7">
+    <td>B-</td>
+      <td>B+ B- AB+ AB-</td>
+      <td>B- O-</td>
+  </tr>
+
+  <tr class="elm8">
+    <td>AB-</td>
+      <td>AB+ AB-</td>
+      <td>AB- A- B- O-</td>
+  </tr>
 </tbody>
 </table>
   </div>
@@ -205,7 +251,36 @@ if (isset($_POST["BloodType"])) {
 </thead>
 
 <tbody>
-  
+<?php
+                        if (isset($_POST["blood_type"])) {
+                            
+                            $conn = new mysqli("localhost", "root" , "", "web_project");
+                            $sqlQuery = "SELECT patientreq.requestID  , patients.FirstName , patients.SecondName , patients.City , patientreq.DName , patientreq.Status FROM patients , patientreq WHERE patientreq.patientUserName =  '$username' ";
+                            $result = mysqli_query($conn , $sqlQuery);
+
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                            <tr>
+                                <td><?php echo $row['requestID'] ?></td>
+                                <td><?php echo $row['FirstName']." ". $row['SecondName']?></td>
+                                <td><?php echo $row['City']?></td>
+                                <td><?php echo $row['DName']?></td>
+                                <?php
+                                if ( $row['Status'] == 'Waiting' ) {
+                                    echo '<td><span class="label btn-shape bg-blue c-white">'.$row['Status'].'</span></td>';
+                                }
+                                elseif ( $row['Status'] == 'Accept' ) {
+                                    echo '<td><span class="label btn-shape bg-green c-white">'.$row['Status'].'</span></td>';
+                                }
+                                elseif ( $row['Status'] == 'Decline' ) {
+                                    echo '<td><span class="label btn-shape bg-red c-white">'.$row['Status'].'</span></td>';
+                                }
+                                ?>
+                              </tr>
+                            <?php
+                                }
+                            }
+                            ?>
 </tbody>
 </table>
   </div>
