@@ -61,7 +61,7 @@ function acceptDonar() {
 function getIndexPatient(x) {
   // index of row
   tableIndex1 = x.rowIndex;
-  console.log(tableIndex);
+  console.log(tableIndex1);
 }
 
 function declinePatient() {
@@ -69,7 +69,7 @@ function declinePatient() {
     document.getElementById("myTablePatient").rows[tableIndex1].cells[3]
       .innerHTML;
   let requestID =
-    document.getElementById("myTablePatient").rows[tableIndex].cells[0]
+    document.getElementById("myTablePatient").rows[tableIndex1].cells[0]
       .innerHTML; // request id
   document.getElementById("myTablePatient").deleteRow(tableIndex1);
   console.log(username);
@@ -82,9 +82,12 @@ function declinePatient() {
       data: {
         id: username,
         state: "Decline",
-        typeof: "Patient",
+        typeofPerson: "Patient",
+        requestID: requestID,
       },
-      success: function (result) {},
+      success: function (result) {
+        alert(username + " " + requestID);
+      },
     });
   });
 }
@@ -94,7 +97,7 @@ function acceptPatient() {
     document.getElementById("myTablePatient").rows[tableIndex1].cells[3]
       .innerHTML;
   let requestID =
-    document.getElementById("myTablePatient").rows[tableIndex].cells[0]
+    document.getElementById("myTablePatient").rows[tableIndex1].cells[0]
       .innerHTML; // request id
   document.getElementById("myTablePatient").deleteRow(tableIndex1);
   console.log(username);
@@ -107,9 +110,12 @@ function acceptPatient() {
       data: {
         id: username,
         state: "Accept",
-        typeof: "Patient",
+        typeofPerson: "Patient",
+        requestID: requestID,
       },
-      success: function (result) {},
+      success: function (result) {
+        alert(username + " " + requestID);
+      },
     });
   });
 }
