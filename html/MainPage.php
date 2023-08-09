@@ -33,8 +33,8 @@
         <li><a href="">قيمّنا</a></li>
         <!-- <li><a href="">من نحن</a></li> -->
         <li><a href="">اتصل بنا</a></li>
-        <li><a href="signin.php">تبرع الآن</a></li>
-        <li><a href="signin.php">اطلب وحدات</a></li>
+        <li><a href="">تبرع الآن</a></li>
+        <li><a href="">اطلب وحدات</a></li>
       </ul>
     </div>
   </header>
