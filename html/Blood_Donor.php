@@ -233,9 +233,6 @@ if (isset($_POST["blood_type"])) {
             </p>
         </div>
     </div>
-    
-    
-
-
+   
 </body>
 </html>
