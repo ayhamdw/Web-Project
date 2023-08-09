@@ -6,13 +6,15 @@ if (isset($_POST['id'])) {
   $type = $_POST['typeofPerson'];
   $requestID = $_POST['requestID'];
   if ($type == "Donar") {
+      echo "Hello";
       $conn = new mysqli("localhost", "root" , "", "web_project");
       $sqlQuery = " UPDATE `donorreq` SET `Status`= '$state'  WHERE `requestID` = '$requestID' and `donarUserName` = '$id'";
       $conn->query($sqlQuery);
   }
-  elseif ($type == "Patient") {
+  if ($type == "Patient") {
+    echo "Hello2";
       $conn = new mysqli("localhost", "root" , "", "web_project");
-      $sqlQuery = " UPDATE `patientreq` SET `accept_status`='$state' WHERE `requestID` = '$requestID' and `patientUserName` =  '$id'";
+      $sqlQuery = "UPDATE `patientreq` SET `accept_status`='$state' where `requestID` = '$requestID' and `patientUserName` =  '$id'";
       $conn->query($sqlQuery);
 
   }
@@ -97,18 +99,19 @@ if (isset($_POST['id'])) {
           <tbody>
           <?php
                       $conn = new mysqli("localhost", "root" , "", "web_project");
-                      $sqlQuery = " SELECT patients.FirstName,patients.SecondName ,patients.UserName , patients.Email , patients.City , patientreq.number_of_unit , patients.BloodType from `patients`, `patientreq` where patients.UserName  = patientreq.patientUserName ";
+                      $sqlQuery = " SELECT patientreq.requestID , patients.FirstName , patients.SecondName , patients.UserName , patients.Email , patients.City,patientreq.number_of_unit,patientreq.blood_type FROM patients , patientreq WHERE patientreq.patientUserName = patients.UserName and patientreq.accept_status = 'Waiting'";
                       $result = mysqli_query($conn , $sqlQuery);
                       while ($row = mysqli_fetch_assoc($result)) {
                      ?> 
               <tr onclick = "getIndexPatient(this)">
+                  <td class="text-center"><?php echo $row["requestID"];?></td>
                   <td class="text-center"><?php echo $row["FirstName"];?></td>
                   <td class="text-center"><?php echo $row["SecondName"];?></td>
                   <td class="text-center"><?php echo $row["UserName"];?></td>
                   <td class="text-center"><?php echo $row["Email"];?></td>
                   <td class="text-center"><?php echo $row["City"];?></td>
                   <td class="text-center"><?php echo $row["number_of_unit"];?></td>
-                  <td class="text-center"><?php echo $row["BloodType"];?></td>
+                  <td class="text-center"><?php echo $row["blood_type"];?></td>
                   <td class="td-actions text-right">
                     <button type="button" onclick= "acceptPatient()" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" id="Accept" data-original-title="" title="">
                       <i class="fa-solid fa-check"></i>
