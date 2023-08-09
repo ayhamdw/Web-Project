@@ -46,12 +46,13 @@ if (isset($_POST["blood_type"])) {
     if(!isset($_SESSION)) 
     { 
         session_start(); 
-    } 
-    $un = $_SESSION['$username'];
+        $un = $_SESSION['$username'];
     $conn = mysqli_connect("localhost", "root", "", "web_project");
     $sqlQuery1 = "SELECT *  FROM `donars` where UserName= '".$un."'";
     $stmt1 = mysqli_query($conn, $sqlQuery1);
     $result = mysqli_fetch_assoc($stmt1);
+    
+    } 
     ?>
 
 </head>
