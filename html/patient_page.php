@@ -184,53 +184,7 @@ if (isset($_POST["BloodType"])) {
 </thead>
 
 <tbody>
-  <tr class="elm1">
-    <td>A+</td>
-      <td>A+ AB+</td>
-      <td>O+ A+ B+ AB+</td>
-  </tr>
- 
-  <tr class="elm2">
-    <td>O+</td>
-      <td>O+ A+ B+ AB+</td>
-      <td>O+ O-</td>
-  </tr>
   
-  <tr class="elm3">
-    <td>B+</td>
-      <td>B+ AB+</td>
-      <td>B+ B- O+ O-</td>
-  </tr>
-
-  <tr class="elm4">
-    <td>AB+</td>
-      <td>AB+</td>
-      <td>Everyone</td>
-  </tr>
-
-  <tr class="elm5">
-    <td>A-</td>
-      <td>A+ A- AB+ AB-</td>
-      <td>A- O-</td>
-  </tr>
-
-  <tr class="elm6">
-    <td>O-</td>
-      <td>Everyone</td>
-      <td>O-</td>
-  </tr>
-
-  <tr class="elm7">
-    <td>B-</td>
-      <td>B+ B- AB+ AB-</td>
-      <td>B- O-</td>
-  </tr>
-
-  <tr class="elm8">
-    <td>AB-</td>
-      <td>AB+ AB-</td>
-      <td>AB- A- B- O-</td>
-  </tr>
 </tbody>
 </table>
   </div>
@@ -251,53 +205,7 @@ if (isset($_POST["BloodType"])) {
 </thead>
 
 <tbody>
-  <tr class="elm1">
-    <td>7/7/2023</td>
-      <td>A+</td>
-      <td>4</td>
-  </tr>
- 
-  <tr class="elm2">
-    <td>18/7/2023</td>
-      <td>AB+</td>
-      <td>7</td>
-  </tr class="elm1">
   
-  <tr class="elm3">
-    <td>25/5/2023</td>
-      <td>O-</td>
-      <td>1</td>
-  </tr>
-
-  <tr class="elm4">
-    <td>12/4/2023</td>
-      <td>B-</td>
-      <td>3</td>
-  </tr>
-
-  <tr class="elm5">
-    <td>18/3/2023</td>
-      <td>B+</td>
-      <td>2</td>
-  </tr>
-
-  <tr class="elm6">
-    <td>22/6/2023</td>
-      <td>O+</td>
-      <td>1</td>
-  </tr>
-
-  <tr class="elm7">
-    <td>30/1/2023</td>
-      <td>B-</td>
-      <td>5</td>
-  </tr>
-
-  <tr class="elm8">
-    <td>6/5/2023</td>
-      <td>AB-</td>
-      <td>8</td>
-  </tr>
 </tbody>
 </table>
   </div>
