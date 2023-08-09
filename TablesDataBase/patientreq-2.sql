@@ -24,25 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donorreq`
+-- Table structure for table `patientreq`
 --
 
-CREATE TABLE `donorreq` (
+CREATE TABLE `patientreq` (
   `requestID` varchar(20) NOT NULL,
-  `DName` varchar(80) NOT NULL,
-  `BType` varchar(20) DEFAULT NULL,
-  `donarUserName` varchar(20) NOT NULL,
-  `Status` varchar(20) NOT NULL DEFAULT 'Waiting'
+  `blood_type` text NOT NULL,
+  `number_of_unit` text NOT NULL,
+  `patientUserName` varchar(20) NOT NULL,
+  `accept_status` text DEFAULT 'Waiting'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `donorreq`
+-- Dumping data for table `patientreq`
 --
 
-INSERT INTO `donorreq` (`requestID`, `DName`, `BType`, `donarUserName`, `Status`) VALUES
-('1', 'C+', '1', 'ayh00am', 'Waiting'),
-('1', 'C+', '1', 'ayh00am', 'Waiting'),
-('2', 'B+', '3', 'ayh00am', 'Waiting');
+INSERT INTO `patientreq` (`requestID`, `blood_type`, `number_of_unit`, `patientUserName`, `accept_status`) VALUES
+('', 'AB+', '1', 'ayhamPatient', NULL),
+('5', 'A+', '6', 'ayhamPatient', 'Waiting');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
