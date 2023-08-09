@@ -1,12 +1,16 @@
-
-   <?php
-    session_start();
-    $un = $_SESSION['$username'];
-    $conn = mysqli_connect("localhost", "root", "", "web_project");
-    $sqlQuery1 = "SELECT *  FROM `patients` where UserName= '".$un."'";
-    $stmt1 = mysqli_query($conn, $sqlQuery1);
-    $result = mysqli_fetch_assoc($stmt1);
-    ?>
+<?php
+session_start();
+if (isset($_POST["BloodType"])) {
+    
+    $btype = $_POST["BloodType"];
+    $userName = $_POST["UserName"];
+    $email = $_POST["Email"];
+    $sqlQuery = "INSERT INTO `patients`(`UserName`, `BloodType`, `Email`) VALUES ('$btype','$userName','$email')";
+    $conn = new mysqli("localhost", "root" ,"", "web_project");
+    $conn->query($sqlQuery);          
+}
+?>
+   
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -26,6 +30,15 @@
     <!--Icon Tab Link -->
     <link rel="icon" href="../imgs/icon tab3.jpg"/>
     <title>patient page</title>
+
+    <?php
+    
+    $un = $_SESSION['$username'];
+    $conn = mysqli_connect("localhost", "root", "", "web_project");
+    $sqlQuery1 = "SELECT *  FROM `patients` where UserName= '".$un."'";
+    $stmt1 = mysqli_query($conn, $sqlQuery1);
+    $result = mysqli_fetch_assoc($stmt1);
+    ?>
 </head>
 <body>
   
@@ -93,7 +106,7 @@
   
   <h6 class="f-w-600" name="PNAME"> </h6>
   
-   <!-- edit icon--> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+   <!-- edit icon--> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16" name="UserName"><?php echo $result['UserName']?></i>
   </div>
   </div>
   <div class="col-sm-8">
@@ -102,8 +115,8 @@
          <div class="row">
   <div class="col-sm-6">
 
-  <p class="m-b-10 f-w-600"> البريد الاكتروني
-  
+  <p class="m-b-10 f-w-600" name="Email"> البريد الاكتروني
+  <?php echo $result['Email']?>
   </p>
 
   </div>
@@ -120,9 +133,9 @@
    <br>
    <div class="row">
     <div class="col-sm-6">
-    <p class="m-b-10 f-w-600">فئة الدم
+    <p class="m-b-10 f-w-600" name="BloodType">فئة الدم
     <br>
-    
+    <?php echo $result['BloodType']?>
     </p>
 
     </div>
@@ -147,7 +160,7 @@
           <h3>اجراءات نقل دم</h3>
           <p>نقل الدم (Transfusion) هو عملية نقل أو إعطاء الدم أو مكوناته من شخص إلى شخص آخر.إليك بعض الإجراءات الأساسية المتبعة في عملية نقل الدم
           </p>
-<a href="">تعرف عليها</a>
+<a href="btp.php">تعرف عليها</a>
             <i class="fa-solid fa-arrow-left"> </i>
           </a>
         
@@ -171,17 +184,17 @@
 </thead>
 
 <tbody>
-  <tr class="elm1">
+<tr class="elm1">
     <td>A+</td>
       <td>A+ AB+</td>
-      <td>O+ A+ B+ AB+</td>
+      <td>A+ A- O+ O-</td>
   </tr>
  
   <tr class="elm2">
     <td>O+</td>
       <td>O+ A+ B+ AB+</td>
       <td>O+ O-</td>
-  </tr>
+  </tr class="elm1">
   
   <tr class="elm3">
     <td>B+</td>
@@ -238,53 +251,36 @@
 </thead>
 
 <tbody>
-  <tr class="elm1">
-    <td>7/7/2023</td>
-      <td>A+</td>
-      <td>4</td>
-  </tr>
- 
-  <tr class="elm2">
-    <td>18/7/2023</td>
-      <td>AB+</td>
-      <td>7</td>
-  </tr class="elm1">
-  
-  <tr class="elm3">
-    <td>25/5/2023</td>
-      <td>O-</td>
-      <td>1</td>
-  </tr>
+<?php
+                        if (isset($_POST["blood_type"])) {
+                            
+                            $conn = new mysqli("localhost", "root" , "", "web_project");
+                            $sqlQuery = "SELECT patientreq.requestID  , patients.FirstName , patients.SecondName , patients.City , patientreq.DName , patientreq.Status FROM patients , patientreq WHERE patientreq.patientUserName =  '$username' ";
+                            $result = mysqli_query($conn , $sqlQuery);
 
-  <tr class="elm4">
-    <td>12/4/2023</td>
-      <td>B-</td>
-      <td>3</td>
-  </tr>
-
-  <tr class="elm5">
-    <td>18/3/2023</td>
-      <td>B+</td>
-      <td>2</td>
-  </tr>
-
-  <tr class="elm6">
-    <td>22/6/2023</td>
-      <td>O+</td>
-      <td>1</td>
-  </tr>
-
-  <tr class="elm7">
-    <td>30/1/2023</td>
-      <td>B-</td>
-      <td>5</td>
-  </tr>
-
-  <tr class="elm8">
-    <td>6/5/2023</td>
-      <td>AB-</td>
-      <td>8</td>
-  </tr>
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                            <tr>
+                                <td><?php echo $row['requestID'] ?></td>
+                                <td><?php echo $row['FirstName']." ". $row['SecondName']?></td>
+                                <td><?php echo $row['City']?></td>
+                                <td><?php echo $row['DName']?></td>
+                                <?php
+                                if ( $row['Status'] == 'Waiting' ) {
+                                    echo '<td><span class="label btn-shape bg-blue c-white">'.$row['Status'].'</span></td>';
+                                }
+                                elseif ( $row['Status'] == 'Accept' ) {
+                                    echo '<td><span class="label btn-shape bg-green c-white">'.$row['Status'].'</span></td>';
+                                }
+                                elseif ( $row['Status'] == 'Decline' ) {
+                                    echo '<td><span class="label btn-shape bg-red c-white">'.$row['Status'].'</span></td>';
+                                }
+                                ?>
+                              </tr>
+                            <?php
+                                }
+                            }
+                            ?>
 </tbody>
 </table>
   </div>
