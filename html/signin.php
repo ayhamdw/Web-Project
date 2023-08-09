@@ -220,7 +220,7 @@ if (isset($_POST['firstName'])) {
           <div class="field-wrap">
             <input type="text" id= "PhoneNumber" name = "phoneNumber" required placeholder="Phone Number" />
           </div>
-          
+
           <div class="field-wrap">
             <input type="password" name = "password" id= "passwordIn" required placeholder="Password" />
           </div>
