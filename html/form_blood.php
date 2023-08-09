@@ -20,6 +20,7 @@ if (isset($_SESSION['usernameSession'])) {
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<title>Form blood page</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Font Awesome Icons-->

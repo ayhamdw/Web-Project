@@ -72,6 +72,7 @@ if (isset($_POST["BloodType"])) {
             </li>
           </ul>
         </div>
+
          
         <!-- Notifiction Icon-->
         
@@ -308,11 +309,9 @@ if (isset($_POST["BloodType"])) {
 
 <!--footer-->
 
-<div class="footer">
-  
-</div>
 
- </div> <!--end container-->
+
+  
    
  
  

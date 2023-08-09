@@ -153,13 +153,11 @@ button{
 
 .check-box svg{
   width: 40px;
-
   margin-top: 3px;
 }
 
 svg path{
   stroke-width: 3;
-  
   stroke: #eee;
   stroke-dashoffset: 34;
   stroke-linecap: round;
@@ -179,7 +177,6 @@ svg path{
 
 .active p{
   margin-right: 125px;
- 
   transition: 1s;
 }
 
@@ -190,6 +187,7 @@ svg path{
 }
 .container #btn #btnText{
 height: 30px;
+transition-delay: 1ms;
 }
 /* Footer */
 .footer{
