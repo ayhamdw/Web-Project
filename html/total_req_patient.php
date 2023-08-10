@@ -67,7 +67,7 @@ $get = mysqli_fetch_assoc($result);
                      
                      ?> 
                         <tr class="elm1">
-                          <td name="number_reg"> <?php echo $get["number_reg"];?></td>
+                          <td name="RequestID"> <?php echo $get["requestID"];?></td>
                             <td name="blood_type"> <?php echo $get["blood_type"];?></td>
                             <td name="number_of_unit"> <?php echo $get["number_of_unit"];?></td>
                             <td name="accept_status"> <?php echo $get["accept_status"];?></td>

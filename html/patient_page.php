@@ -125,13 +125,13 @@ if (isset($_POST["BloodType"])) {
   <br>
   <div class="row">
   <div class="col-sm-6">
-  <p class="m-b-10 f-w-600">العمر
+  <p class="m-b-10 f-w-600">
 
   </p>
 
   </div>
    </div>
-   <br>
+   
    <div class="row">
     <div class="col-sm-6">
     <p class="m-b-10 f-w-600" name="BloodType">فئة الدم
@@ -245,13 +245,20 @@ if (isset($_POST["BloodType"])) {
     <table >
       <thead >
       <tr">
-        <td>التاريخ</td>
+        <td>رقم الطلب</td>
         <td>فئة الدم</td>
         <td>عدد الوحدات</td>
       </tr>
 </thead>
 
-<tbody>
+<>
+
+<tr class="elm1">
+    <td>183</td>
+      <td>b+</td>
+      <td>4</td>
+  </tr>
+  
 <?php
                         if (isset($_POST["blood_type"])) {
                             

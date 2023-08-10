@@ -51,7 +51,7 @@ $result = mysqli_query($conn, $sqlQuery);
       <?php
                         while ($row = mysqli_fetch_assoc($result)) {
                             // Extract data from the current row
-                            $req_id = $row["number_reg"];
+                            $req_id = $row["requestID"];
                             $btype = $row["blood_type"];
                             $number_of_unit = $row["number_of_unit"];
                             $status = $row["accept_status"];
