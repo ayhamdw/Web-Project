@@ -46,12 +46,13 @@ if (isset($_POST["blood_type"])) {
     if(!isset($_SESSION)) 
     { 
         session_start(); 
-    } 
-    $un = $_SESSION['$username'];
+        $un = $_SESSION['$username'];
     $conn = mysqli_connect("localhost", "root", "", "web_project");
     $sqlQuery1 = "SELECT *  FROM `donars` where UserName= '".$un."'";
     $stmt1 = mysqli_query($conn, $sqlQuery1);
     $result = mysqli_fetch_assoc($stmt1);
+    
+    } 
     ?>
 
 </head>
@@ -89,7 +90,7 @@ if (isset($_POST["blood_type"])) {
                     <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Requests_page_donor.php">
                         
                         <i class="fa-solid fa-file-signature"></i>
-                        <span class="hide-mobile">الطلبات</span>
+                        <span class="hide-mobile">اطلب دم</span>
                     </a>
                 </li>
                 <li>
@@ -233,9 +234,6 @@ if (isset($_POST["blood_type"])) {
             </p>
         </div>
     </div>
-    
-    
-
-
+   
 </body>
 </html>
