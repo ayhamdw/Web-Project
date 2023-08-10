@@ -69,7 +69,7 @@ if (isset($_POST["blood_type"])) {
                     </a>
                 </li>
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/MainPage.html">
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/MainPage.php">
                         
                         <i class="fa-solid fa-house-user"></i>
                         <span class="hide-mobile">الرئيسية</span>
@@ -94,7 +94,7 @@ if (isset($_POST["blood_type"])) {
                     </a>
                 </li>
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/general_information.html">
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/general_information.php">
                         
                         <i class="fa-solid fa-notes-medical"></i>
                         <span class="hide-mobile">فوائد التبرع بالدم</span>

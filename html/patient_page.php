@@ -63,7 +63,11 @@ if (isset($_POST["BloodType"])) {
               </button>
               
               <ul class="dropdown-menu dropdown-menu-dark">
+<<<<<<< HEAD
+                <li><a class="dropdown-item" href="../html/MainPage.php"> الرئيسية </a></li>
+=======
                 <li><a class="dropdown-item" href="MainPage.php"> الرئيسية </a></li>
+>>>>>>> 244b278173f709cd5fc6a5d3b15aea08cf64ccb3
                 <li><a class="dropdown-item" href="Requests_page_patient.php"> الطلبات </a></li>
                 <li><a class="dropdown-item" href="Blood_Donar_Setting.php"> اعدادات الحساب </a></li>
                 <li><a class="dropdown-item" href="#">تواصل معنا </a></li>
