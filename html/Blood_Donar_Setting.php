@@ -80,7 +80,7 @@
 
 </head>
 <body>
-    <div class="page d-flex">
+<div class="page d-flex">
         <div class="sidebar bg-white p-20 p-relative" >
             <h3 class=" txt-c mt-0">المتبرع</h3>
             <ul>
@@ -92,7 +92,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="/html/MainPage.html">
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/MainPage.php">
                         
                         <i class="fa-solid fa-house-user"></i>
                         <span class="hide-mobile">الرئيسية</span>
@@ -100,22 +100,24 @@
                 </li>
                 
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/Blood_Donar_Setting.php">
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Blood_Donar_Setting.php">
                         
                         <i class="fa-solid fa-gear"></i>
                         <span class="hide-mobile">إعدادات الحساب</span>
                     </a>
                 </li>
 
+                
+
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="/html/patient_page.html">
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Requests_page_donor.php">
                         
                         <i class="fa-solid fa-file-signature"></i>
-                        <span class="hide-mobile">اطلب دم</span>
+                        <span class="hide-mobile">الطلبات</span>
                     </a>
                 </li>
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/general_information.html">
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="../html/general_information.php">
                         
                         <i class="fa-solid fa-notes-medical"></i>
                         <span class="hide-mobile">فوائد التبرع بالدم</span>
