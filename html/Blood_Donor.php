@@ -90,7 +90,7 @@ if (isset($_POST["blood_type"])) {
                     <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Requests_page_donor.php">
                         
                         <i class="fa-solid fa-file-signature"></i>
-                        <span class="hide-mobile">اطلب دم</span>
+                        <span class="hide-mobile">الطلبات</span>
                     </a>
                 </li>
                 <li>
