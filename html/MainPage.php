@@ -184,7 +184,7 @@
               </svg>
               <span class="like">Like</span>
             </span>
-            <span class="likeCount" id="like-count-1">2045</span>
+            <span class="likeCount" id="like-count-1">876</span>
           </button>
         </div> <!-- end element 1-->
       </div> <!-- end element 1-->
@@ -193,7 +193,7 @@
 
         <div class="content"> <!-- start content element 2-->
 
-          <h2 class="title"> جودة الدم </h2> <!--title-->
+          <h2 class="title"> الاجراءات</h2> <!--title-->
 
           <i class="icon_element"><!--icon-->
           <i class="fa-solid fa-stethoscope fa-xl" style="color: #cc0000;"></i>
@@ -210,7 +210,7 @@
               </svg>
               <span class="like">Like</span>
             </span>
-            <span class="likeCount" id="like-count-1">2045</span>
+            <span class="likeCount" id="like-count-1">4045</span>
           </button>
         </div> <!-- end element 2-->
       </div> <!-- end element 2-->
@@ -236,16 +236,10 @@
               </svg>
               <span class="like">Like</span>
             </span>
-            <span class="likeCount" id="like-count-1">2045</span>
+            <span class="likeCount" id="like-count-1">245</span>
           </button>
         </div> <!-- end element 2-->
       </div> <!-- end element 2-->
-
-
-
-
-      
-
 
       <div class="element"> <!-- start element 4-->
 
